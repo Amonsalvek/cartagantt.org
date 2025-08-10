@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartagantt - Creador de Diagramas de Gantt Gratuito Online | Gestión de Proyectos</title>
+    <meta name="description" content="Crea diagramas de Gantt profesionales gratis online. Cartagantt te ayuda a planificar, gestionar y visualizar proyectos con herramientas avanzadas de gestión de proyectos.">
+    <meta name="keywords" content="diagrama de gantt, creador gantt gratis, gestión proyectos, planificación proyectos, cronograma, timeline, project management">
+    <link rel="canonical" href="https://cartagantt.org">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/bebas-neue');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 90%;
+            max-width: 1200px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            z-index: 1000;
+            margin-top: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 2s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #4f46e5;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(79, 70, 229, 0.1);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 100px;
+            left: 5%;
+            right: 5%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            z-index: 999;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 1rem 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .mobile-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 1.5rem 2.5rem;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu a:hover {
+            background: #f8fafc;
+            color: #4f46e5;
+        }
+
+        .mobile-menu .btn {
+            margin: 1.5rem 2.5rem;
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-buttons .btn {
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 400;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6574ff, #7f78fd);
+            color: white;
+            position: relative;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 100% 100%;
+            z-index: -1;
+            border-radius: inherit;
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes neonGlow {
+            0% {
+                background-position: 0% 50%;
+                opacity: 0.7;
+            }
+            50% {
+                background-position: 100% 50%;
+                opacity: 1;
+            }
+            100% {
+                background-position: 0% 50%;
+                opacity: 0.7;
+            }
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #4f46e5;
+            border: none;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 0 10px rgba(79, 70, 229, 0.3),
+                0 0 20px rgba(79, 70, 229, 0.1);
+        }
+
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed, #a855f7, #4f46e5);
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: inherit;
+            animation: neonGlowSecondary 2.5s ease-in-out infinite alternate;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 20px rgba(79, 70, 229, 0.6),
+                0 0 40px rgba(79, 70, 229, 0.4),
+                0 0 60px rgba(79, 70, 229, 0.2);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .btn-secondary:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes neonGlowSecondary {
+            0% {
+                background-position: 0% 50%;
+                opacity: 0.5;
+            }
+            50% {
+                background-position: 100% 50%;
+                opacity: 0.8;
+            }
+            100% {
+                background-position: 0% 50%;
+                opacity: 0.5;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            color: #333;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 0.8;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: bold;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-section {
+            margin-top: 2rem;
+        }
+
+        .hero .btn {
+            font-size: 1.2rem;
+            padding: 1.2rem 2.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .hero .btn-primary:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+        }
+
+        .hero .btn-secondary:hover {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+        }
+
+        .hero .features-preview {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        /* Gantt Chart Explanation Sections */
+        .gantt-explanation {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .gantt-explanation:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .explanation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .explanation-container.reverse {
+            direction: rtl;
+        }
+
+        .explanation-container.reverse > * {
+            direction: ltr;
+        }
+
+        .explanation-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .explanation-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #6574ff;
+            font-weight: 500;
+        }
+
+        .explanation-content p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .explanation-content ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .explanation-content li {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .explanation-content li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .explanation-image {
+            text-align: center;
+        }
+
+        .explanation-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .feature-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-badge ion-icon {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        /* Demo Section */
+        .demo-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .demo-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .demo-content p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .demo-visual {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .gantt-chart {
+            width: 100%;
+            height: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gantt-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .gantt-header h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 500;
+            color: #1f2937;
+        }
+
+        .gantt-task {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-name {
+            width: 150px;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        .task-bar {
+            height: 20px;
+            border-radius: 4px;
+            margin-left: 1rem;
+            position: relative;
+        }
+
+        .task-bar.planning {
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            width: 120px;
+        }
+
+        .task-bar.design {
+            background: linear-gradient(90deg, #10b981, #059669);
+            width: 90px;
+            margin-left: 140px;
+        }
+
+        .task-bar.development {
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            width: 180px;
+            margin-left: 200px;
+        }
+
+        .task-bar.testing {
+            background: linear-gradient(90deg, #ef4444, #dc2626);
+            width: 80px;
+            margin-left: 340px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .features-header h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .features-header .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .feature-icon ion-icon {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #6574ff, #7f78fd);
+            color: white;
+        }
+
+        .benefits-content {
+            text-align: center;
+        }
+
+        .benefits h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: whitesmoke;
+            font-family: 'Bebas Neue', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .waitlist-form p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .email-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-input {
+            flex: 1;
+            min-width: 250px;
+            font-family: 'Quicksand', sans-serif;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .email-input:focus {
+            border-color: #6574ff;
+        }
+
+        .submit-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #6574ff, #7f78fd);
+            color: white;
+            border: none;
+            font-family: 'Quicksand', sans-serif;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #667eea);
+            background-size: 300% 100%;
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 
+                0 15px 35px rgba(79, 70, 229, 0.6),
+                0 0 30px rgba(102, 126, 234, 0.5),
+                0 0 50px rgba(240, 147, 251, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .submit-btn:hover::before {
+            left: 0;
+            background-position: 100% 0;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+
+        /* Footer */
+        footer {
+            background: #2f2d2f;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            text-shadow: 0 0 35px rgba(99, 102, 241, 0.5);
+            font-weight: 500;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 2s ease-in-out infinite;
+            text-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            color: #9ca3af;
+        }
+
+        .footer-logo {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            width: 100vw;
+            max-width: none;
+            height: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .explanation-container {
+                gap: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            /* Header & Navigation */
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .cta-buttons {
+                gap: 0.5rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            /* Hero Section */
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero .cta-section {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero .btn {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+                margin: 0;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .hero .features-preview {
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .feature-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Explanation Sections */
+            .gantt-explanation {
+                padding: 60px 0;
+            }
+
+            .explanation-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .explanation-container.reverse {
+                direction: ltr;
+            }
+
+            .explanation-content h2 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .explanation-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .explanation-content p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .explanation-image {
+                /* Removed border container styles */
+            }
+
+            /* Demo Section */
+            .demo-section {
+                padding: 60px 0;
+            }
+
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .demo-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .demo-content p {
+                font-size: 1rem;
+            }
+
+            .gantt-chart {
+                height: 250px;
+            }
+
+            .task-name {
+                width: 120px;
+                font-size: 0.8rem;
+            }
+
+            /* Features Section */
+            .features {
+                padding: 60px 0;
+            }
+
+            .features-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .features-header p {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+            }
+
+            .feature-icon {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 0.8rem;
+            }
+
+            .feature-icon ion-icon {
+                font-size: 1.5rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .feature-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Benefits Section */
+            .benefits {
+                padding: 60px 0;
+            }
+
+            .benefits h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .benefit-number {
+                font-size: 2.5rem;
+            }
+
+            .benefit-text {
+                font-size: 1rem;
+            }
+
+            /* Waitlist Section */
+            .final-cta {
+                padding: 60px 0;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+            }
+
+            .waitlist-form {
+                max-width: 100%;
+                margin: 1.5rem auto;
+            }
+
+            .waitlist-form p {
+                font-size: 0.9rem;
+            }
+
+            .email-input-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .email-input {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+            }
+
+            .footer-section a {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Hero Section */
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .hero .features-preview {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-badge {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+
+            /* Explanation Sections */
+            .explanation-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .explanation-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .explanation-image {
+                /* Removed border container styles */
+            }
+
+            /* Demo Section */
+            .demo-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .gantt-chart {
+                height: 200px;
+                padding: 0.8rem;
+            }
+
+            .task-name {
+                width: 100px;
+                font-size: 0.7rem;
+            }
+
+            /* Features Section */
+            .features-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.2rem;
+            }
+
+            .feature-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .feature-icon ion-icon {
+                font-size: 1.3rem;
+            }
+
+            /* Benefits Section */
+            .benefits h2 {
+                font-size: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .benefit-number {
+                font-size: 2rem;
+            }
+
+            .benefit-text {
+                font-size: 0.9rem;
+            }
+
+            /* Waitlist Section */
+            .final-cta h2 {
+                font-size: 1.5rem;
+            }
+
+            .waitlist-form p {
+                font-size: 0.8rem;
+            }
+
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .btn {
+                min-height: 44px;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .email-input {
+                min-height: 44px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            .submit-btn {
+                min-height: 44px;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .explanation-image img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Illuminated Gradient Text Effects */
+        .gradient-text-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .gradient-text-secondary {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            text-shadow: 0 0 25px rgba(79, 70, 229, 0.4);
+        }
+
+        .gradient-text-accent {
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #c084fc 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .gradient-text-glow {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            text-shadow: 0 0 35px rgba(99, 102, 241, 0.5);
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Hover effects for gradient text */
+        .gradient-text-primary:hover,
+        .gradient-text-secondary:hover,
+        .gradient-text-accent:hover,
+        .gradient-text-glow:hover {
+            animation: gradientShift 1.5s ease-in-out infinite;
+            text-shadow: 0 0 40px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Cartagantt</div>
+            <ul class="nav-links">
+                <li><a href="#features">Características</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="#waitlist" class="btn btn-primary">Comenzar Gratis</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </button>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#waitlist" class="btn btn-primary">Comenzar Gratis</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Crea Cartas Gantt<br>Profesionales en Minutos</h1>
+            <p class="subtitle">Profesionaliza tus proyectos más rápido</p>
+            
+            <div class="cta-section">
+                <a href="#waitlist" class="btn btn-primary">Comenzar Gratis
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </a>
+                <!-- <a href="#demo" class="btn btn-secondary" style="color:whitesmoke;border-color:whitesmoke;">Ver Demo</a> -->
+            </div>
+            
+            <div class="features-preview">
+                <div class="feature-badge"><ion-icon name="bar-chart-outline"></ion-icon> Plantillas Avanzadas</div>
+                <div class="feature-badge"><ion-icon name="flash-outline"></ion-icon> Colaboración en Tiempo Real</div>
+                <div class="feature-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Multiplataforma</div>
+                <div class="feature-badge"><ion-icon name="refresh-outline"></ion-icon> Sincronización Automática</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primera Sección Explicativa: ¿Qué es un Diagrama de Gantt? -->
+    <section class="gantt-explanation">
+        <div class="container">
+            <div class="explanation-container">
+                <div class="explanation-content">
+                    <h2>¿Qué es un Diagrama de Gantt?</h2>
+                    <h3>La herramienta esencial para la gestión de proyectos</h3>
+                    <p>Un diagrama de Gantt es una representación visual del cronograma de un proyecto que permite planificar, coordinar y hacer seguimiento de tareas específicas. Desarrollado por Henry Gantt a principios del siglo XX, esta metodología se ha convertido en el estándar de la industria para la gestión de proyectos.</p>
+                    
+                    <p>Los diagramas de Gantt muestran las tareas del proyecto en el eje vertical y el tiempo en el eje horizontal, creando una vista clara de:</p>
+                    
+                    <ul>
+                        <li><strong>Duración de cada tarea:</strong> Cuánto tiempo tomará completar cada actividad</li>
+                        <li><strong>Dependencias entre tareas:</strong> Qué actividades deben completarse antes de iniciar otras</li>
+                        <li><strong>Recursos asignados:</strong> Quién es responsable de cada tarea</li>
+                        <li><strong>Progreso del proyecto:</strong> Estado actual de cada actividad</li>
+                        <li><strong>Hitos importantes:</strong> Puntos clave de control y entrega</li>
+                    </ul>
+                    
+                    <p>Esta visualización permite a los equipos identificar rápidamente cuellos de botella, optimizar la asignación de recursos y mantener el proyecto en el camino correcto hacia la finalización exitosa.</p>
+                </div>
+                <img src="https://github.com/Amonsalvek/cartagantt.org/blob/main/carta%20gantt%20glossy%203d.png?raw=true" alt="Carta Gantt Glossy 3D - Gestión de Proyectos" title="Carta Gantt Glossy 3D - Cartagantt" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Segunda Sección Explicativa: Beneficios de los Diagramas de Gantt -->
+    <section class="gantt-explanation">
+        <div class="container">
+            <div class="explanation-container reverse">
+                <div class="explanation-content">
+                    <h2>Beneficios de los Diagramas de Gantt</h2>
+                    <h3>Por qué las empresas líderes confían en esta metodología</h3>
+                    <p>Los diagramas de Gantt ofrecen múltiples ventajas que transforman la forma en que las organizaciones gestionan sus proyectos, desde startups hasta grandes corporaciones.</p>
+                    
+                    <p><strong>Mejora la comunicación del equipo:</strong> Todos los miembros pueden ver claramente qué tareas están en progreso, quién es responsable y cuándo se espera la finalización.</p>
+                    
+                    <p><strong>Facilita la identificación de problemas:</strong> Los retrasos y conflictos de recursos se hacen visibles inmediatamente, permitiendo acciones correctivas rápidas.</p>
+                    
+                    <p><strong>Optimiza la asignación de recursos:</strong> Los gerentes pueden distribuir eficientemente el trabajo y evitar la sobrecarga de tareas.</p>
+                    
+                    <p><strong>Mejora la precisión en la estimación:</strong> Con el tiempo, los equipos desarrollan mejores estimaciones basadas en datos históricos.</p>
+                    
+                    <p><strong>Facilita la presentación a stakeholders:</strong> Los diagramas de Gantt proporcionan una vista clara y profesional del progreso del proyecto para clientes y directivos.</p>
+                </div>
+                <div class="explanation-image">
+                    <img src="https://github.com/Amonsalvek/cartagantt.org/blob/main/bullseye%203d%20glossy%20vidrio.png?raw=true" alt="Bullseye 3D Glossy Vidrio - Gestión de Proyectos" title="Bullseye 3D Glossy Vidrio - Cartagantt" style="max-width: 100%; height: auto; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="demo-section" id="demo">
+        <div class="container">
+            <div class="demo-container">
+                <div class="demo-content">
+                    <h2>Todo lo que necesitas para<br><span class="gradient-text-primary">gestionar proyectos</span></h2>
+                    <p>Crea, colabora y comparte diagramas de Gantt impresionantes directamente en tu navegador. Sin instalaciones, sin complicaciones.</p>
+                    <div class="cta-section">
+                        <a href="#" class="btn btn-primary">Probar Ahora</a>
+                    </div>
+                </div>
+                
+                <div class="demo-visual">
+                    <div class="gantt-chart">
+                        <div class="gantt-header">
+                            <h4>Proyecto: Lanzamiento de Producto</h4>
+                            <span style="color: #10b981;">● En Progreso</span>
+                        </div>
+                        <div class="gantt-task">
+                            <div class="task-name">Planificación</div>
+                            <div class="task-bar planning"></div>
+                        </div>
+                        <div class="gantt-task">
+                            <div class="task-name">Diseño</div>
+                            <div class="task-bar design"></div>
+                        </div>
+                        <div class="gantt-task">
+                            <div class="task-name">Desarrollo</div>
+                            <div class="task-bar development"></div>
+                        </div>
+                        <div class="gantt-task">
+                            <div class="task-name">Testing</div>
+                            <div class="task-bar testing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-header">
+                <h2>TODO EN <span class="highlight">UNA SOLA PLATAFORMA</span></h2>
+                <p>Crea, gestiona y colabora en proyectos de manera eficiente con nuestras herramientas integradas</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="list-outline"></ion-icon></div>
+                    <h3>Gestión de Tareas</h3>
+                    <p>Organiza tareas, define dependencias y establece hitos críticos para mantener tu proyecto en el camino correcto.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="people-outline"></ion-icon></div>
+                    <h3>Colaboración en Tiempo Real</h3>
+                    <p>Trabaja con tu equipo simultáneamente, comenta tareas y recibe notificaciones automáticas de cambios.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="analytics-outline"></ion-icon></div>
+                    <h3>Reportes Avanzados</h3>
+                    <p>Genera informes detallados de progreso, utilización de recursos y análisis de rendimiento del proyecto.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
+                    <h3>Plantillas Personalizables</h3>
+                    <p>Elige entre docenas de plantillas prediseñadas o crea las tuyas propias para diferentes tipos de proyectos.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="link-outline"></ion-icon></div>
+                    <h3>Integraciones</h3>
+                    <p>Conecta con Slack, Trello, Asana, Microsoft Project y más de 50 herramientas populares de productividad.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+                    <h3>Acceso Móvil</h3>
+                    <p>Accede y actualiza tus proyectos desde cualquier dispositivo con nuestra app móvil nativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-content">
+                <h2>Resultados que hablan por sí solos</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-number">40%</div>
+                        <div class="benefit-text">Reducción en tiempo de planificación</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">85%</div>
+                        <div class="benefit-text">Mejora en cumplimiento de plazos</div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-number">4.9★</div>
+                        <div class="benefit-text">Calificación promedio de usuarios</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="waitlist">
+        <div class="container">
+            <h2>¿Listo para revolucionar tu gestión de proyectos?</h2>
+            <p>Únete a miles de equipos que ya confían en Cartagantt para llevar sus proyectos al siguiente nivel. Comienza gratis hoy mismo.</p>
+            
+            <div class="waitlist-form">
+                <p>¡Únete a nuestra lista de espera! Sé el primero en saber cuando Cartagantt esté disponible y obtén acceso prioritario.</p>
+                <form id="waitlistForm">
+                    <div class="email-input-group">
+                        <input type="email" id="userEmail" class="email-input" placeholder="Correo electrónico" required>
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span id="submitText">Unirse a la Lista</span>
+                            <span id="loadingText" style="display: none;">Enviando...</span>
+                        </button>
+                    </div>
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Producto</h3>
+                    <ul>
+                        <li><a href="#">Características</a></li>
+                        <li><a href="#">Plantillas</a></li>
+                        <li><a href="#">Integraciones</a></li>
+                        <li><a href="#">Precios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Recursos</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Empresa</h3>
+                    <ul>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Prensa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Términos de Servicio</a></li>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Seguridad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cartagantt.org. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-logo">
+                <img src="https://github.com/Amonsalvek/cartagantt.org/blob/main/carta%20gantt%20logo.png?raw=true" alt="Cartagantt Logo" title="Cartagantt - Creador de Diagramas de Gantt">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .benefit-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic Gantt chart animation
+        function animateGanttBars() {
+            const bars = document.querySelectorAll('.task-bar');
+            bars.forEach((bar, index) => {
+                bar.style.transform = 'scaleX(0)';
+                bar.style.transformOrigin = 'left';
+                bar.style.transition = 'transform 0.8s ease-out';
+                
+                setTimeout(() => {
+                    bar.style.transform = 'scaleX(1)';
+                }, index * 200 + 500);
+            });
+        }
+
+        // Trigger animation when demo section is visible
+        const demoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateGanttBars();
+                    demoObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        demoObserver.observe(document.querySelector('.demo-section'));
+
+        // Mobile Menu Functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            const icon = this.querySelector('ion-icon');
+            if (mobileMenu.classList.contains('active')) {
+                icon.setAttribute('name', 'close-outline');
+            } else {
+                icon.setAttribute('name', 'menu-outline');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('ion-icon');
+                icon.setAttribute('name', 'menu-outline');
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('ion-icon');
+                icon.setAttribute('name', 'menu-outline');
+            }
+        });
+
+        // EmailJS Configuration and Form Handling
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("bfqyiqKP5yqhufasl"); // Replace "public_key" with your actual EmailJS public key
+            
+            const form = document.getElementById('waitlistForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+            const formMessage = document.getElementById('formMessage');
+            const emailInput = document.getElementById('userEmail');
+
+            function showMessage(message, type) {
+                formMessage.textContent = message;
+                formMessage.className = `form-message ${type}`;
+                formMessage.style.display = 'block';
+                
+                if (type === 'success') {
+                    emailInput.value = '';
+                }
+            }
+
+            function setLoading(loading) {
+                submitBtn.disabled = loading;
+                submitText.style.display = loading ? 'none' : 'inline';
+                loadingText.style.display = loading ? 'inline' : 'none';
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    showMessage('Por favor, ingresa tu correo electrónico.', 'error');
+                    return;
+                }
+
+                if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    showMessage('Por favor, ingresa un correo electrónico válido.', 'error');
+                    return;
+                }
+
+                setLoading(true);
+                formMessage.style.display = 'none';
+
+                // EmailJS template parameters
+                const templateParams = {
+                    user_email: email,
+                    user_name: email.split('@')[0], // Extract name from email
+                    message: `Nuevo registro en la lista de espera de Cartagantt:\n\nEmail: ${email}\nFecha: ${new Date().toLocaleString('es-ES')}\n\nEl usuario se ha registrado para recibir notificaciones cuando el producto esté disponible.`,
+                    reply_to: email
+                };
+
+                // Send email using EmailJS
+                // Replace 'service_id' and 'template_id' with your actual EmailJS service and template IDs
+                emailjs.send('service_id', 'template_id', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showMessage('¡Gracias! Te hemos agregado a nuestra lista de espera. Te notificaremos cuando Cartagantt esté disponible.', 'success');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        showMessage('Hubo un error al enviar tu registro. Por favor, intenta nuevamente.', 'error');
+                    })
+                    .finally(function() {
+                        setLoading(false);
+                    });
+            });
+        })();
+    </script>
+</body>
+</html>
