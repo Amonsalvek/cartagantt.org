@@ -365,7 +365,7 @@
             font-weight: bold;
         }
 
-        .explanation-image img {
+        .explanation-image img, .blog-card-image img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
@@ -1152,7 +1152,7 @@
 
         /* High DPI displays */
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .explanation-image img, .footer-logo img {
+            .explanation-image img, .footer-logo img, .blog-card-image img {
                 image-rendering: optimizeQuality;
             }
         }
@@ -1180,6 +1180,28 @@
             background-clip: text;
             animation: gradientShift 3s ease-in-out infinite;
         }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .blog-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .blog-card h2 {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .blog-card p {
+            font-size: 16px;
+        }
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -1191,7 +1213,7 @@
             <ul class="nav-links">
                 <li><a href="#features" aria-label="Características de Cartagantt">Características</a></li>
                 <li><a href="/sobre-nosotros.html" aria-label="Sobre nosotros">Sobre nosotros</a></li>
-                <li><a href="/blog.html" aria-label="Blog de Cartagantt">Blog</a></li>
+                <li><a href="/blog/" aria-label="Blog de Cartagantt">Blog</a></li>
             </ul>
             <div class="cta-buttons">
                 <a href="#waitlist" class="btn btn-primary" aria-label="Comenzar gratis con Cartagantt">Comenzar Gratis</a>
@@ -1204,7 +1226,7 @@
             <ul>
                 <li><a href="#features" aria-label="Características de Cartagantt">Características</a></li>
                 <li><a href="/sobre-nosotros.html" aria-label="Sobre nosotros">Sobre nosotros</a></li>
-                <li><a href="/blog.html" aria-label="Blog de Cartagantt">Blog</a></li>
+                <li><a href="/blog/" aria-label="Blog de Cartagantt">Blog</a></li>
                 <li><a href="#waitlist" class="btn btn-primary" aria-label="Comenzar gratis con Cartagantt">Comenzar Gratis</a></li>
             </ul>
         </div>
@@ -1212,163 +1234,22 @@
 
     <section class="hero" style="padding-top: 100px;">
         <div class="container">
-            <h1>Crea Cartas Gantt<br>Profesionales en Minutos</h1>
-            <p class="subtitle">Profesionaliza tus proyectos más rápido con nuestro creador de diagramas de Gantt</p>
-            <div class="cta-section">
-                <a href="#waitlist" class="btn btn-primary" aria-label="Comenzar gratis con Cartagantt">Comenzar Gratis <ion-icon name="arrow-forward-outline"></ion-icon></a>
-                <a href="#demo" class="btn btn-secondary" aria-label="Ver demostración de Cartagantt">Ver Demo</a>
-            </div>
-            <div class="features-preview">
-                <div class="feature-badge"><ion-icon name="bar-chart-outline"></ion-icon> Plantillas Avanzadas</div>
-                <div class="feature-badge"><ion-icon name="flash-outline"></ion-icon> Colaboración en Tiempo Real</div>
-                <div class="feature-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Multiplataforma</div>
-                <div class="feature-badge"><ion-icon name="refresh-outline"></ion-icon> Sincronización Automática</div>
-            </div>
+            <h1>Blog</h1>
+            <p class="subtitle">Aprende todo sobre la gestión de proyectos</p>
         </div>
     </section>
 
-    <section class="gantt-explanation">
-        <div class="container">
-            <div class="explanation-container">
-                <div class="explanation-content">
-                    <h2>¿Qué es un Diagrama de Gantt?</h2>
-                    <h3>La herramienta esencial para la gestión de proyectos</h3>
-                    <p>Un diagrama de Gantt es una representación visual del cronograma de un proyecto que permite planificar, coordinar y hacer seguimiento de tareas específicas. Desarrollado por Henry Gantt, es el estándar para la gestión de proyectos.</p>
-                    <p>Los diagramas de Gantt muestran:</p>
-                    <ul>
-                        <li><strong>Duración de tareas:</strong> Tiempo para completar cada actividad</li>
-                        <li><strong>Dependencias:</strong> Tareas que deben completarse antes de otras</li>
-                        <li><strong>Recursos:</strong> Responsables de cada tarea</li>
-                        <li><strong>Progreso:</strong> Estado actual de las actividades</li>
-                        <li><strong>Hitos:</strong> Puntos clave de control</li>
-                    </ul>
-                    <p>Visualiza cuellos de botella, optimiza recursos y mantén tus proyectos en el camino correcto.</p>
-                </div>
-                <div class="explanation-image">
-                    <img src="/images/carta-gantt-glossy-3d.png" alt="Diagrama de Gantt 3D - Gestión de Proyectos" title="Diagrama de Gantt 3D - Cartagantt" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="gantt-explanation">
+    <section>
         <div class="container">
-            <div class="explanation-container reverse">
-                <div class="explanation-content">
-                    <h2>Beneficios de los Diagramas de Gantt</h2>
-                    <h3>Por qué las empresas líderes los utilizan</h3>
-                    <p>Los diagramas de Gantt transforman la gestión de proyectos para todo tipo de organizaciones.</p>
-                    <ul>
-                        <li><strong>Mejor comunicación:</strong> Claridad en tareas y responsabilidades</li>
-                        <li><strong>Identifica problemas:</strong> Detecta retrasos y conflictos rápidamente</li>
-                        <li><strong>Optimiza recursos:</strong> Distribuye el trabajo eficientemente</li>
-                        <li><strong>Precisión en estimaciones:</strong> Mejora con datos históricos</li>
-                        <li><strong>Presentaciones claras:</strong> Informes profesionales para stakeholders</li>
-                    </ul>
-                </div>
-                <div class="explanation-image">
-                    <img src="/images/bullseye-3d-glossy-vidrio.png" alt="Bullseye 3D - Gestión de Proyectos" title="Bullseye 3D - Cartagantt" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="demo-section" id="demo">
-        <div class="container">
-            <div class="demo-container">
-                <div class="demo-content">
-                    <h2>Todo lo que necesitas para<br><span class="gradient-text-primary">gestionar proyectos</span></h2>
-                    <p>Crea, colabora y comparte diagramas de Gantt impresionantes directamente en tu navegador.</p>
-                    <div class="cta-section">
-                        <a href="#waitlist" class="btn btn-primary" aria-label="Probar Cartagantt ahora">Probar Ahora</a>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="/images/mazo-abogado-glossy-3d.png" alt="Compliance-mazo-abogado-glossy-3d" style="width: 100%;height: 200px;object-fit: cover;">
                     </div>
-                </div>
-                <div class="demo-visual">
-                    <div class="gantt-chart">
-                        <div class="gantt-header">
-                            <h4>Proyecto: Lanzamiento de Producto</h4>
-                            <span style="color: #10b981;">● En Progreso</span>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Planificación</div>
-                            <div class="task-bar planning"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Diseño</div>
-                            <div class="task-bar design"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Desarrollo</div>
-                            <div class="task-bar development"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Testing</div>
-                            <div class="task-bar testing"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <div class="features-header">
-                <h2>TODO EN <span class="highlight">UNA SOLA PLATAFORMA</span></h2>
-                <p>Crea, gestiona y colabora en proyectos con nuestras herramientas integradas</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="list-outline"></ion-icon></div>
-                    <h3>Gestión de Tareas</h3>
-                    <p>Organiza tareas, define dependencias y establece hitos para mantener tu proyecto en el camino correcto.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="people-outline"></ion-icon></div>
-                    <h3>Colaboración en Tiempo Real</h3>
-                    <p>Trabaja con tu equipo simultáneamente, comenta tareas y recibe notificaciones automáticas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="analytics-outline"></ion-icon></div>
-                    <h3>Reportes Avanzados</h3>
-                    <p>Genera informes detallados de progreso, utilización de recursos y rendimiento del proyecto.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
-                    <h3>Plantillas Personalizables</h3>
-                    <p>Elige entre plantillas prediseñadas o crea las tuyas propias para diferentes proyectos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="link-outline"></ion-icon></div>
-                    <h3>Integraciones</h3>
-                    <p>Conecta con Slack, Trello, Asana, Microsoft Project y más de 50 herramientas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-                    <h3>Acceso Móvil</h3>
-                    <p>Accede y actualiza tus proyectos desde cualquier dispositivo con nuestra app móvil.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits">
-        <div class="container">
-            <div class="benefits-content">
-                <h2>Resultados que hablan por sí solos</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-number">40%</div>
-                        <div class="benefit-text">Reducción en tiempo de planificación</div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">85%</div>
-                        <div class="benefit-text">Mejora en cumplimiento de plazos</div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">4.9★</div>
-                        <div class="benefit-text">Calificación promedio de usuarios</div>
-                    </div>
+                    <a href="/blog/compliance.html" style="text-decoration: none;color: inherit;align-items: center;display: flex;flex-direction: column;justify-content: center;">
+                        <h2>Compliance</h2>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1492,8 +1373,6 @@
                     }
                 });
             }, { threshold: 0.5 });
-
-            demoObserver.observe(document.querySelector('.demo-section'));
 
             // Mobile menu
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');

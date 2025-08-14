@@ -358,7 +358,6 @@
         }
 
         .explanation-content li:before {
-            content: "✓";
             position: absolute;
             left: 0;
             color: #10b981;
@@ -1180,6 +1179,122 @@
             background-clip: text;
             animation: gradientShift 3s ease-in-out infinite;
         }
+
+
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hero {
+            background: #eceeee;
+            color: #333;
+            text-align: center;
+            padding: 80px 0;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .gantt-explanation {
+            background: white;
+            margin: 30px 0;
+            padding: 60px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .explanation-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .explanation-content h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .explanation-content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+        .explanation-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .explanation-content li {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #10b981;
+            border-radius: 5px;
+        }
+        .explanation-content strong {
+            color: #2c3e50;
+        }
+        .highlight {
+            background: linear-gradient(120deg, #667eea20 0%, #764ba220 100%);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+
+
+        .rating-container {
+                            background-color: #f8f9fa;
+                            border-radius: 12px;
+                            padding: 12px 16px;
+                            display: inline-flex;
+                            align-items: center;
+                            gap: 8px;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                            border: 1px solid #e9ecef;
+                        }
+                
+                        .rating-icon {
+                            width: 100px;
+                            height: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #f8f9fa;
+                            font-weight: bold;
+                            font-size: 14px;
+                        }
+                
+                        .rating-score {
+                            font-size: 18px;
+                            font-family: Oswald;
+                            font-weight: 600;
+                            color: #6c757d;
+                        }
+                
+                        .stars {
+                            display: flex;
+                            gap: 2px;
+                        }
+                
+                        .star {
+                            font-size: 16px;
+                            color: #e9ecef;
+                        }
+                
+                        .star.filled {
+                            color: #ced4da;
+                        }
+                
+                        .star.half {
+                            color: #ced4da;
+                            position: relative;
+                        }
+                
+                        .reviews-text {
+                            font-size: 14px;
+                            font-family: Quicksand;
+                            color: #868e96;
+                        }
     </style>
 </head>
 <body>
@@ -1189,7 +1304,7 @@
                 <div class="logo" aria-label="Cartagantt Logo">Cartagantt</div>
             </a>
             <ul class="nav-links">
-                <li><a href="#features" aria-label="Características de Cartagantt">Características</a></li>
+                <li><a href="/#features" aria-label="Características de Cartagantt">Características</a></li>
                 <li><a href="/sobre-nosotros.html" aria-label="Sobre nosotros">Sobre nosotros</a></li>
                 <li><a href="/blog.html" aria-label="Blog de Cartagantt">Blog</a></li>
             </ul>
@@ -1202,52 +1317,57 @@
         </nav>
         <div class="mobile-menu" id="mobileMenu" aria-hidden="false">
             <ul>
-                <li><a href="#features" aria-label="Características de Cartagantt">Características</a></li>
+                <li><a href="/#features" aria-label="Características de Cartagantt">Características</a></li>
                 <li><a href="/sobre-nosotros.html" aria-label="Sobre nosotros">Sobre nosotros</a></li>
-                <li><a href="/blog.html" aria-label="Blog de Cartagantt">Blog</a></li>
+                <li><a href="/blog/" aria-label="Blog de Cartagantt">Blog</a></li>
                 <li><a href="#waitlist" class="btn btn-primary" aria-label="Comenzar gratis con Cartagantt">Comenzar Gratis</a></li>
             </ul>
         </div>
     </header>
 
-    <section class="hero" style="padding-top: 100px;">
+    <section class="hero" style="padding-top: 200px;">
         <div class="container">
-            <h1>Crea Cartas Gantt<br>Profesionales en Minutos</h1>
-            <p class="subtitle">Profesionaliza tus proyectos más rápido con nuestro creador de diagramas de Gantt</p>
-            <div class="cta-section">
-                <a href="#waitlist" class="btn btn-primary" aria-label="Comenzar gratis con Cartagantt">Comenzar Gratis <ion-icon name="arrow-forward-outline"></ion-icon></a>
-                <a href="#demo" class="btn btn-secondary" aria-label="Ver demostración de Cartagantt">Ver Demo</a>
-            </div>
-            <div class="features-preview">
-                <div class="feature-badge"><ion-icon name="bar-chart-outline"></ion-icon> Plantillas Avanzadas</div>
-                <div class="feature-badge"><ion-icon name="flash-outline"></ion-icon> Colaboración en Tiempo Real</div>
-                <div class="feature-badge"><ion-icon name="phone-portrait-outline"></ion-icon> Multiplataforma</div>
-                <div class="feature-badge"><ion-icon name="refresh-outline"></ion-icon> Sincronización Automática</div>
-            </div>
+            <h1>Expertos en Diagramas de Gantt y Gestión de Proyectos</h1>
+            <p class="subtitle">Cartagantt es la empresa especializada en la creación de diagramas de Gantt profesionales</p>
         </div>
     </section>
 
     <section class="gantt-explanation">
         <div class="container">
             <div class="explanation-container">
-                <div class="explanation-content">
-                    <h2>¿Qué es un Diagrama de Gantt?</h2>
-                    <h3>La herramienta esencial para la gestión de proyectos</h3>
-                    <p>Un diagrama de Gantt es una representación visual del cronograma de un proyecto que permite planificar, coordinar y hacer seguimiento de tareas específicas. Desarrollado por Henry Gantt, es el estándar para la gestión de proyectos.</p>
-                    <p>Los diagramas de Gantt muestran:</p>
-                    <ul>
-                        <li><strong>Duración de tareas:</strong> Tiempo para completar cada actividad</li>
-                        <li><strong>Dependencias:</strong> Tareas que deben completarse antes de otras</li>
-                        <li><strong>Recursos:</strong> Responsables de cada tarea</li>
-                        <li><strong>Progreso:</strong> Estado actual de las actividades</li>
-                        <li><strong>Hitos:</strong> Puntos clave de control</li>
-                    </ul>
-                    <p>Visualiza cuellos de botella, optimiza recursos y mantén tus proyectos en el camino correcto.</p>
-                </div>
-                <div class="explanation-image">
-                    <img src="/images/carta-gantt-glossy-3d.png" alt="Diagrama de Gantt 3D - Gestión de Proyectos" title="Diagrama de Gantt 3D - Cartagantt" loading="lazy">
+                <div class="explanation-content" style="display: flex;flex-direction: row;">
+                    <div style="display: flex;flex-direction: column;gap: 20px;">
+                        <h2>¿Quiénes somos en Cartagantt?</h2>
+                        <p>Somos una empresa con <strong>más de 8 años de experiencia</strong> especializada en <strong>gestión profesional de proyectos</strong>, <strong>diagramas de Gantt avanzados</strong> y <strong>consultoría empresarial en project management</strong>. Desde nuestra fundación en Bogotá, hemos expandido nuestros servicios por toda Colombia, atendiendo desde startups tecnológicas hasta grandes corporaciones multinacionales.</p>
+                        
+                        <p>Nuestro equipo multidisciplinario está conformado por <strong>ingenieros industriales certificados PMP</strong>, <strong>especialistas en metodologías ágiles Scrum y Kanban</strong>, <strong>desarrolladores de software empresarial</strong> y <strong>consultores en optimización de procesos</strong>. Esta combinación única de talentos nos permite ofrecer soluciones integrales que van más allá de la simple creación de cronogramas.</p>                        
+                    </div>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                        <img src="/images/toro-glossy-vidrio.png" alt="Sobre nosotros" title="Sobre nosotros" loading="lazy">
+                    </div>
                 </div>
             </div>
+            <div class="explanation-content">
+                <p>Trabajamos con tecnología de vanguardia incluyendo <strong>inteligencia artificial para predicción de riesgos</strong>, <strong>análisis de datos en tiempo real</strong>, <strong>automatización de procesos</strong> y <strong>integración con sistemas ERP y CRM existentes</strong>. Nuestro compromiso es transformar la forma en que las empresas latinoamericanas gestionan sus proyectos, reduciendo tiempos de entrega hasta en un 40% y optimizando el uso de recursos humanos y financieros.</p>
+            </div>
+
+            <div style="display: flex;justify-content: center;align-items: center;">
+                <div class="rating-container">
+                    <div class="rating-icon">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdC b3g9IjAgMCAxNTAwIDM0NC45ODMiPjxwYXRoIGZpbGw9IiNGRjlEMjgiIGQ9 Ik04LjkwNSAxMjcuMzhsMTM1LjE4MS4wMjcgODIuMTk5LjAxNFY0NS45ODd6 Ii8+PHBhdGggZmlsbD0iIzY4QzVFRCIgZD0iTTIyNi4yODUgNDUuOTg3VjMz My40OUwzMjguOTUgNy41MzR6Ii8+PHBhdGggZmlsbD0iIzA0NEQ4MCIgZD0i TTIyNi4yODUgMTI3LjQyMWwtODIuMTk5LS4wMTQgODIuMTk5IDIwNi4wODN6 Ii8+PHBhdGggZmlsbD0iI0U1NDc0NyIgZD0iTTguOTA1IDEyNy4zOGwxNTYu MjYgNTIuOTA1LTIxLjA3OS01Mi44Nzh6Ii8+PGcgZmlsbD0iIzA0NEQ4MCI+ PHBhdGggZD0iTTUwNi44ODQgMjU3LjgwOWMtMS4xOTIgMS4xOTItMy4xNzgg Mi42NzktNS45NTUgNC40NjUtMi43ODIgMS43ODgtNi40MDIgMy41NzQtMTAu ODY4IDUuMzYyLTQuNDY2IDEuNzg0LTkuOTI4IDMuMzItMTYuMzc2IDQuNjE1 LTYuNDU0IDEuMjg3LTEzLjg0NSAxLjkzNC0yMi4xODIgMS45MzQtMTYuMDgg MC0yOS45NzYtMi41ODItNDEuNjg2LTcuNzQtMTEuNzE1LTUuMTU4LTIxLjM5 MS0xMi4zNTktMjkuMDMxLTIxLjU4Ny03LjY0My05LjIzMS0xMy4yNDktMjAu MTQ2LTE2LjgyMi0zMi43NTQtMy41NzMtMTIuNjA0LTUuMzU5LTI2LjQ0OC01 LjM1OS00MS41MzYgMC0xNS4wODIgMS45MzUtMjkuMDMgNS44MDYtNDEuODMz IDMuODctMTIuODA0IDkuNjc2LTIzLjg2NiAxNy40MTctMzMuMiA3Ljc0Mi05 LjMyNyAxNy40MTktMTYuNjIzIDI5LjAzMi0yMS44ODUgMTEuNjEyLTUuMjU2 IDI1LjI1Ny03Ljg5IDQwLjk0LTcuODkgNy43NDIgMCAxNC43MzkuNjk3IDIw Ljk5MiAyLjA4NCA2LjI1MyAxLjM5IDExLjcxIDMuMDI5IDE2LjM3NyA0Ljkx MyA0LjY2MSAxLjg4OSA4LjUzMyAzLjg3IDExLjYxMiA1Ljk1NSAzLjA3NSAy LjA4NCA1LjQwNyAzLjgyNSA2Ljk5OCA1LjIxIDEuNzg2IDEuNTkyIDMuMzIy IDMuNDc2IDQuNjE1IDUuNjU3IDEuMjg5IDIuMTg3IDEuOTM1IDQuNTY5IDEu OTM1IDcuMTQ3IDAgMy45NzMtMS40ODkgNy45NDEtNC40NjYgMTEuOTEtMi45 NzcgMy45NzMtNi4yNTMgNy42NDUtOS44MjcgMTEuMDE3LTIuMzgyLTIuMzgy LTUuMDYxLTQuODEtOC4wMzgtNy4yOTQtMi45NzgtMi40ODEtNi4zMDQtNC42 NjItOS45NzUtNi41NTEtMy42NzUtMS44ODQtNy44NDQtMy40NzEtMTIuNTA2 LTQuNzY0LTQuNjY2LTEuMjg5LTkuODc2LTEuOTM2LTE1LjYzMS0xLjkzNi0x MC4xMjQgMC0xOC42MDkgMi4wMzgtMjUuNDU4IDYuMTA0LTYuODQ4IDQuMDcx LTEyLjM1NyA5LjM3OS0xNi41MjUgMTUuOTMtNC4xNjggNi41NTEtNy4xNDYg MTQuMDQ1LTguOTMzIDIyLjQ4LTEuNzg2IDguNDM5LTIuNjc5IDE3LjAyMy0y LjY3OSAyNS43NTYgMCA5LjMzMi44OTMgMTguMjY0IDIuNjc5IDI2Ljc5NiAx Ljc4NiA4LjUzNiA0Ljg2MSAxNi4wODEgOS4yMzEgMjIuNjI5IDQuMzYzIDYu NTUgMTAuMDcyIDExLjgxMiAxNy4xMiAxNS43OCA3LjA0MyAzLjk3NCAxNS44 MjcgNS45NTYgMjYuMzUxIDUuOTU2IDUuNTU0IDAgMTAuNjY4LS42OTMgMTUu MzM0LTIuMDgzIDQuNjYxLTEuMzg4IDguNzgzLTMuMDc3IDEyLjM1Ni01LjA2 NSAzLjU3My0xLjk4IDYuNy00LjA2MyA5LjM3OS02LjI0OSAyLjY4LTIuMTg0 IDQuOTEzLTQuMDY3IDYuNy01LjY1OSAxLjE5MSAxLjM5MiAyLjU3NyAzLjA4 MSA0LjE2OCA1LjA2M2E3MS43MzA3IDcxLjczMDcgMCAwIDEgNC40NjYgNi4y NTNjMS4zODcgMi4xODYgMi41NzggNC4zNjggMy41NzMgNi41NDguOTkxIDIu MTg4IDEuNDg4IDQuMTcgMS40ODggNS45NTQgMCAyLjU4NC0uNDk3IDQuNzY2 LTEuNDg4IDYuNTUyLS45OTYgMS43ODctMi41ODMgMy43NzQtNC43NjQgNS45 NTZ6TTY2MC4zMjcgMjM0Ljk3M2MwIDE1Ljc3NyAyLjI5MyAyNy4yNiA2Ljg4 OSAzNC40NDktMy41OTQgMS4zOTUtNi45NCAyLjM5NS0xMC4wMzUgMi45OTQt My4wOTguNi02LjM0MS44OTgtOS43MzUuODk4LTcuMTg4IDAtMTIuNjMyLTEu Mzk4LTE2LjMyNC00LjE5My0zLjY5Ny0yLjc5My02LjA0My02Ljc4Ny03LjAz OS0xMS45ODItNC4zOTYgNC41OTgtMTAuMTg2IDguNDktMTcuMzc0IDExLjY4 Ni03LjE4OSAzLjE4OS0xNS45NzkgNC43OTEtMjYuMzYgNC43OTEtNS4zOTIg MC0xMC43ODMtLjc0OC0xNi4xNzUtMi4yMzYtNS4zOTMtMS41LTEwLjI4Ny0z LjkzNC0xNC42NzktNy4zMTQtNC4zOTUtMy4zODctNy45ODgtNy45MTYtMTAu NzgzLTEzLjU5LTIuNzk5LTUuNjc0LTQuMTk0LTEyLjU5LTQuMTk0LTIwLjc1 IDAtMTAuMTUyIDIuNDQ0LTE4LjQxNiA3LjMzOS0yNC43ODMgNC44OTItNi4z NzMgMTEuMDMyLTExLjM5OCAxOC40MjMtMTUuMDgyIDcuMzg2LTMuNjggMTUu Mzc1LTYuMjEzIDIzLjk2NC03LjYxIDguNTg0LTEuMzk1IDE2LjQ3NS0yLjI4 OCAyMy42NjMtMi42OTEgMi4zOTgtLjE5NyA0Ljc0Mi0uMyA3LjA0LS4zaDYu NDR2LTUuNDUyYzAtNy42NzYtMi4wNS0xMy4xMjktNi4xNDEtMTYuMzU4LTQu MDk2LTMuMjMtMTAuNzM3LTQuODQ5LTE5LjkyLTQuODQ5LTguNTg4IDAtMTYu MjI3IDEuMzk5LTIyLjkxNSA0LjE5My02LjY5MyAyLjc5OS0xMy4yMzIgNS45 OTEtMTkuNjIgOS41ODYtMi43OTktMy4zOTQtNS4wNDctNy4xMzctNi43NC0x MS4yMzMtMS42OTgtNC4wOS0yLjU0Ni03LjEzNy0yLjU0Ni05LjEzNiAwLTIu Nzk0IDEuNTQ0LTUuNDkgNC42NDMtOC4wODggMy4wOTQtMi41OTIgNy4zMzkt NC45NDIgMTIuNzMxLTcuMDM5IDUuMzkzLTIuMDk3IDExLjU4LTMuNzkxIDE4 LjU3My01LjA5MiA2Ljk4Ny0xLjI5NyAxNC4zNzctMS45NDcgMjIuMTY2LTEu OTQ3IDEwLjc4MyAwIDE5LjkxOSAxLjEgMjcuNDA3IDMuMjk1IDcuNDg5IDIu MiAxMy41NzkgNS41OTMgMTguMjczIDEwLjE4NCA0LjY5IDQuNTk3IDguMDM2 IDEwLjMzNSAxMC4wMzQgMTcuMjI0IDEuOTk0IDYuODkgMi45OTYgMTQuOTMx IDIuOTk2IDI0LjExM3Y1Ni4zMTJ6bS0zOC4zNDMtMzQuNzQ2aC00LjE5MmMt MS40MDEgMC0yLjguMTA0LTQuMTk0LjMwMS00Ljk5NS40MDItOS45MzggMS0x NC44MjcgMS43OTUtNC44OTYuODAxLTkuMjQgMi4xOTktMTMuMDMgNC4xOTUt My43OTYgMS45OTgtNi44OSA0LjU5Ni05LjI4NiA3Ljc4Ny0yLjM5NyAzLjE5 Ny0zLjU5NSA3LjI5My0zLjU5NSAxMi4yODMgMCA1LjU5MiAxLjU5NiAxMC4z MzIgNC43OTIgMTQuMjI3IDMuMTkyIDMuODk1IDguNTg0IDUuODQyIDE2LjE3 NiA1Ljg0MiAzLjc5MSAwIDcuMzg3LS40OTYgMTAuNzg0LTEuNSAzLjM5My0u OTk0IDYuMzg4LTIuMjkzIDguOTg2LTMuODkxIDIuNTkzLTEuNTk4IDQuNjQz LTMuMzQ0IDYuMTQxLTUuMjQ0IDEuNDk3LTEuODk1IDIuMjQ2LTMuNjQxIDIu MjQ2LTUuMjR2LTMwLjU1NXpNNzM0LjkwOSAxNDEuMjE3YzMuMTgzLTMuNzkx IDguMTYzLTcuNjM4IDE0LjkzLTExLjUzMyA2Ljc2OC0zLjg5NCAxNS4zMjgt NS44NDEgMjUuNjgxLTUuODQxIDcuMzY4IDAgMTQuMzg0IDEuMjQ5IDIxLjA1 NSAzLjc0NCA2LjY2NCAyLjQ5OSAxMi41ODkgNi41NDQgMTcuNzY1IDEyLjEz MiA1LjE3NyA1LjU5MyA5LjMwNyAxMi45ODMgMTIuMzk1IDIyLjE2NiAzLjA4 NSA5LjE4OCA0LjYyOSAyMC40NzMgNC42MjkgMzMuODQ4IDAgMTUuNTc2LTEu Nzk0IDI4LjQxLTUuMzc2IDM4LjQ5Mi0zLjU4NiAxMC4wODgtOC4yMTEgMTgu MDc2LTEzLjg4MiAyMy45NjUtNS42NzQgNS44OTEtMTEuOTk4IDEwLjAzNS0x OC45NjIgMTIuNDMtNi45NjkgMi4zOTYtMTMuOTM4IDMuNTk2LTIwLjkwMyAz LjU5Ni01Ljc3NCAwLTEwLjgwMy0uNjUtMTUuMDc5LTEuOTQ3LTQuMjgzLTEu MzAxLTcuOTE1LTIuNzQ0LTEwLjkwMS00LjM0NC0yLjk4Ni0xLjU5Ni01LjI3 NC0zLjE5MS02Ljg2NS00Ljc5My0xLjU5Mi0xLjU5Ni0yLjU4OS0yLjY5Ny0y Ljk4Ni0zLjI5N3Y3My42MzVoLTQwLjczOVYxMjguMDM2YzEuMDAyLS4xOTYg Mi4yMS0uMzk3IDMuNjIyLS41OTggMS4yMDktLjE5NiAyLjYxNy0uMzQ3IDQu MjI3LS40NSAxLjYwOS0uMDk4IDMuNTIxLS4xNDkgNS43MzMtLjE0OSA2LjYz NyAwIDEyLjI3MiAxLjEgMTYuOSAzLjI5NSA0LjYyNyAyLjIgNy41NDkgNS44 OTIgOC43NTYgMTEuMDgzem01My45MTkgNTUuNDE0YzAtNS45OS0uNDk3LTEx LjU3OC0xLjQ4OS0xNi43NzMtLjk5Mi01LjE5LTIuNjMtOS42ODQtNC45MTQt MTMuNDc5LTIuMjg0LTMuNzkyLTUuMzY1LTYuNzQtOS4yMzUtOC44MzgtMy44 NzYtMi4wOTYtOC41ODgtMy4xNDMtMTQuMTQ1LTMuMTQzLTguMzM5IDAtMTQu MTQ3IDEuNi0xNy40MjUgNC43OTEtMy4yNzUgMy4xOTctNC45MTMgNi42OTQt NC45MTMgMTAuNDg1djYzLjUwNGMxLjU4NiAxLjYgNC40MTIgMy40OTQgOC40 ODQgNS42OTEgNC4wNzMgMi4xOTkgOC43ODUgMy4yOTMgMTQuMTQ5IDMuMjkz IDEwLjEyOCAwIDE3LjU3NC0zLjk5IDIyLjM0LTExLjk4IDQuNzY2LTcuOTg2 IDcuMTQ4LTE5LjE3MiA3LjE0OC0zMy41NTF6TTg2Mi44MDYgMjQ4LjE1NWMt MS40LTMuOTkyLTIuMjk4LTguMTg4LTIuNjk2LTEyLjU4Mi0uNDAyLTQuMzkx LS41OTktOC43ODMtLjU5OS0xMy4xODJWODMuNDA0YzEuMzk1LS4xOTYgMi44 OTMtLjM5NyA0LjQ5My0uNTk5IDEuMzkzLS4xOTYgMi44OTItLjM0NSA0LjQ5 Mi0uNDQ5IDEuNTk3LS4wOTggMy4xOTMtLjE0OSA0Ljc5Mi0uMTQ5IDMuMTkz IDAgNi4zOTEuMyA5LjU4Ny44OTggMy4xOTEuNiA2LjA4OCAxLjc5OCA4LjY4 OCAzLjU5NCAyLjU5MyAxLjc5NyA0LjY4OSA0LjI0NiA2LjI4OSA3LjMzOSAx LjU5NyAzLjA5OCAyLjM5NiA3LjE0MyAyLjM5NiAxMi4xMzF2MjEuMjY3aDQx LjkzOHYzMC4yNTZoLTQxLjkzOHY2My44NzdjMCAxMy45MyA1LjY5MSAyMC44 OTMgMTcuMDc1IDIwLjg5MyAyLjc5NSAwIDUuNDM4LS40NDcgNy45MzgtMS4z NDggMi40OTUtLjg5OCA0Ljc0MS0xLjg5NSA2Ljc0LTIuOTk0IDEuOTk1LTEu MDk4IDMuNzQ0LTIuMjQ2IDUuMjQyLTMuNDQ1IDEuNDk4LTEuMTk5IDIuNTQ2 LTIuMDk2IDMuMTQ0LTIuNjk1IDIuOTk2IDQuMzk2IDUuMjg5IDguMjAxIDYu ODkgMTEuNDEyIDEuNTk2IDMuMjE1IDIuMzk2IDYuMjMyIDIuMzk2IDkuMDUx IDAgMi42MjMtMS4wNDYgNS4xOTUtMy4xNDUgNy43MTNzLTUuMDQ2IDQuODQt OC44MzggNi45NTVjLTMuNzk0IDIuMTE1LTguMzg1IDMuODI4LTEzLjc3OCA1 LjEzOS01LjM5MSAxLjMxMS0xMS4yODUgMS45NjctMTcuNjczIDEuOTY3LTEy LjM4NSAwLTIyLjAxOC0yLjM5OC0yOC45MDctNy4xODktNi44ODktNC43OTUt MTEuNzM0LTExLjA4Ni0xNC41MjYtMTguODczek0xMDQ1LjM2MiAyNDQuMjZj NS4wMDggMCA5LjQxNy0uNTQ3IDEzLjIyOC0xLjY0OCAzLjgwNS0xLjA5NCA3 LjIxMS0yLjQ0MyAxMC4yMTgtNC4wNDEgMy4wMDQtMS41OTYgNS42MTItMy4z NDQgNy44MTctNS4yNDIgMi4yMDMtMS44OTYgNC4yMDYtMy42NDMgNi4wMTQt NS4yNDQgMi40MDEgMi45OTQgNC45MDUgNi44NDIgNy41MTIgMTEuNTMxIDIu NjA0IDQuNjk3IDMuOTA4IDguNTM5IDMuOTA4IDExLjUzMyAwIDQuMzk1LTIu NDk5IDguMzg5LTcuNDg3IDExLjk4My00LjE5NCAzLjE5Ny0xMC4xNCA1Ljk0 My0xNy44MjMgOC4yMzYtNy42OTEgMi4yOTUtMTYuNzI5IDMuNDQ1LTI3LjEw OSAzLjQ0NS05LjM5MSAwLTE4LjYyNS0xLjE5Ny0yNy43MDgtMy41OTQtOS4w ODgtMi4zOTUtMTcuMTc4LTYuNTktMjQuMjYzLTEyLjU4Mi03LjA5Mi01Ljk4 OC0xMi44MzQtMTQuMDI1LTE3LjIyNi0yNC4xMTEtNC4zOTMtMTAuMDg0LTYu NTg5LTIyLjgxMi02LjU4OS0zOC4xOTMgMC0xMi41ODIgMS45NDgtMjMuNDEx IDUuODM5LTMyLjUgMy44OTYtOS4wODUgOS4wODYtMTYuNjI0IDE1LjU4MS0y Mi42MTUgNi40ODUtNS45OTEgMTMuODI0LTEwLjM4MSAyMi4wMTQtMTMuMTgx IDguMTg2LTIuNzkzIDE2LjU3NS00LjE5MyAyNS4xNjMtNC4xOTMgMTEuMTgy IDAgMjAuNjY3IDEuNzUxIDI4LjQ1NSA1LjI0MiA3Ljc5IDMuNDk2IDE0LjEy NiA4LjE5IDE5LjAyMiAxNC4wNzkgNC44OSA1Ljg5MSA4LjQzNCAxMi42MzEg MTAuNjMzIDIwLjIxOSAyLjE5NCA3LjU5MSAzLjI5NSAxNS41NzYgMy4yOTUg MjMuOTYzdjQuMTkzYzAgMS42MDItLjA1MSAzLjI5NS0uMTUgNS4wOTItLjEw MiAxLjc5OS0uMiAzLjU0OS0uMjk4IDUuMjQyLS4xMDQgMS43MDEtLjI1NCAz LjA0Ny0uNDQ4IDQuMDQ1aC04OC4zNjhjLjgwMSAxMC45ODQgNC4yMDcgMjAu MTE5IDEwLjIxOCAyNy40MSA2LjAwNyA3LjI5MSAxNS41MjYgMTAuOTMxIDI4 LjU1MiAxMC45MzF6bTEzLjY1LTYwLjgwOGMwLTkuNTg1LTEuODYtMTcuMzcz LTUuNTc1LTIzLjM2NC0zLjcxNi01Ljk5LTEwLjM5Ny04Ljk4Ny0yMC4wMzIt OC45ODctOC4yMzkgMC0xNC44MTUgMi44NDctMTkuNzM0IDguNTM4LTQuOTI0 IDUuNjkyLTcuMzc5IDEzLjYyOS03LjM3OSAyMy44MTJoNTIuNzJ6TTExNjYu NzUgMTQxLjk3NGMxLjE5Ni0xLjc4MiAyLjc5My0zLjc2MiA0Ljc5Mi01Ljk0 NCAxLjk5NC0yLjE4IDQuNDQyLTQuMTYxIDcuMzM5LTUuOTQzIDIuODkzLTEu NzgzIDYuMDg5LTMuMjcyIDkuNTg2LTQuNDYgMy40OS0xLjE4OSA3LjIzNi0x Ljc4MyAxMS4yMzQtMS43ODMgMi4zOTUgMCA0Ljk0Mi4yMDEgNy42MzcuNTk0 IDIuNjk2LjM5OCA1LjE5IDEuMTQyIDcuNDg3IDIuMjI4IDIuMjk1IDEuMDkx IDQuMTQ1IDIuNTc0IDUuNTQzIDQuNDU2IDEuMzk1IDEuODgyIDIuMDk3IDQu MjA4IDIuMDk3IDYuOTc5IDAgNC4zNTctMS4xMDEgOS4zNjEtMy4yOTUgMTUu MDEtMi4yIDUuNjU0LTQuMzkzIDEwLjQ3NS02LjU4OSAxNC40NjctMy4zOTkt Mi43OTUtNi43OTMtNC45NDItMTAuMTg2LTYuNDQtMy4zOTctMS40OTctNy4z OTEtMi4yNDctMTEuOTgyLTIuMjQ3LTYuMTkxIDAtMTEuMzgyIDEuODAzLTE1 LjU3NCA1LjQwNi00LjE5NyAzLjYwNC02LjI5MyA3LjkxLTYuMjkzIDEyLjkx N3Y5Ni45NjloLTQwLjczNlYxMjguMDM2Yy45OTYtLjE5NiAyLjE5NC0uMzk3 IDMuNTkzLS41OTggMS4xOTgtLjE5NiAyLjU5NS0uMzQ3IDQuMTk0LS40NSAx LjU5Ny0uMDk4IDMuNDkyLS4xNDkgNS42OTEtLjE0OSA2LjM4OSAwIDExLjkz IDEuMjM5IDE2LjYyNSAzLjcxMiA0LjY4OSAyLjQ3IDcuNjM5IDYuMjggOC44 MzcgMTEuNDIzek0xMjgyLjU3MyAxNDEuOTc0YzEuMTk4LTEuNzgyIDIuNzk0 LTMuNzYyIDQuNzkzLTUuOTQ0IDEuOTk0LTIuMTggNC40NDItNC4xNjEgNy4z MzktNS45NDMgMi44OTMtMS43ODMgNi4wODgtMy4yNzIgOS41ODUtNC40NiAz LjQ5Mi0xLjE4OSA3LjIzNi0xLjc4MyAxMS4yMzMtMS43ODMgMi4zOTUgMCA0 Ljk0MS4yMDEgNy42MzcuNTk0IDIuNjk1LjM5OCA1LjE5MSAxLjE0MiA3LjQ4 OSAyLjIyOCAyLjI5NSAxLjA5MSA0LjE0MSAyLjU3NCA1LjU0NCA0LjQ1NiAx LjM5NCAxLjg4MiAyLjA5NiA0LjIwOCAyLjA5NiA2Ljk3OSAwIDQuMzU3LTEu MTAyIDkuMzYxLTMuMjk1IDE1LjAxLTIuMjAyIDUuNjU0LTQuMzk2IDEwLjQ3 NS02LjU5MSAxNC40NjctMy4zOTYtMi43OTUtNi43OTMtNC45NDItMTAuMTg1 LTYuNDQtMy4zOTYtMS40OTctNy4zOS0yLjI0Ny0xMS45ODEtMi4yNDctNi4x OTEgMC0xMS4zODMgMS44MDMtMTUuNTc2IDUuNDA2LTQuMTk0IDMuNjA0LTYu MjkgNy45MS02LjI5IDEyLjkxN3Y5Ni45NjloLTQwLjczOFYxMjguMDM2Yy45 OTctLjE5NiAyLjE5NS0uMzk3IDMuNTk1LS41OTggMS4xOTgtLjE5NiAyLjU5 NS0uMzQ3IDQuMTkzLS40NSAxLjU5Ni0uMDk4IDMuNDkxLS4xNDkgNS42OS0u MTQ5IDYuMzkxIDAgMTEuOTMyIDEuMjM5IDE2LjYyNCAzLjcxMiA0LjY5IDIu NDcgNy42MzggNi4yOCA4LjgzOCAxMS40MjN6TTE0NzYuOTc5IDIzNC45NzNj MCAxNS43NzcgMi4yOTUgMjcuMjYgNi44OSAzNC40NDktMy41OTUgMS4zOTUt Ni45NDEgMi4zOTUtMTAuMDM0IDIuOTk0LTMuMDk4LjYtNi4zNDIuODk4LTku NzM1Ljg5OC03LjE5MSAwLTEyLjYzMy0xLjM5OC0xNi4zMjUtNC4xOTMtMy42 OTktMi43OTMtNi4wNDMtNi43ODctNy4wNDEtMTEuOTgyLTQuMzkzIDQuNTk4 LTEwLjE4NCA4LjQ5LTE3LjM3MyAxMS42ODYtNy4xODggMy4xODktMTUuOTc5 IDQuNzkxLTI2LjM1OSA0Ljc5MS01LjM5MyAwLTEwLjc4My0uNzQ4LTE2LjE3 Ny0yLjIzNi01LjM5MS0xLjUtMTAuMjg4LTMuOTM0LTE0LjY3Ny03LjMxNC00 LjM5NS0zLjM4Ny03Ljk4OS03LjkxNi0xMC43ODQtMTMuNTktMi43OTgtNS42 NzQtNC4xOTItMTIuNTktNC4xOTItMjAuNzUgMC0xMC4xNTIgMi40NDEtMTgu NDE2IDcuMzM5LTI0Ljc4MyA0Ljg5LTYuMzczIDExLjAzMi0xMS4zOTggMTgu NDIyLTE1LjA4MiA3LjM4NS0zLjY4IDE1LjM3My02LjIxMyAyMy45NjQtNy42 MSA4LjU4Mi0xLjM5NSAxNi40NzQtMi4yODggMjMuNjYzLTIuNjkxIDIuMzk3 LS4xOTcgNC43NDEtLjMgNy4wNDEtLjNoNi40Mzl2LTUuNDUyYzAtNy42NzYt Mi4wNTEtMTMuMTI5LTYuMTQyLTE2LjM1OC00LjA5Ny0zLjIzLTEwLjczNi00 Ljg0OS0xOS45Mi00Ljg0OS04LjU4NyAwLTE2LjIyNSAxLjM5OS0yMi45MTQg NC4xOTMtNi42OTMgMi43OTktMTMuMjMxIDUuOTkxLTE5LjYyMSA5LjU4Ni0y Ljc5Ny0zLjM5NC01LjA0Ny03LjEzNy02Ljc0LTExLjIzMy0xLjY5Ny00LjA5 LTIuNTQ1LTcuMTM3LTIuNTQ1LTkuMTM2IDAtMi43OTQgMS41NDQtNS40OSA0 LjY0My04LjA4OCAzLjA5NC0yLjU5MiA3LjMzOS00Ljk0MiAxMi43My03LjAz OSA1LjM5My0yLjA5NyAxMS41OC0zLjc5MSAxOC41NzEtNS4wOTIgNi45ODkt MS4yOTcgMTQuMzc5LTEuOTQ3IDIyLjE2Ny0xLjk0NyAxMC43ODMgMCAxOS45 MiAxLjEgMjcuNDA5IDMuMjk1IDcuNDg3IDIuMiAxMy41NzcgNS41OTMgMTgu MjcxIDEwLjE4NCA0LjY5IDQuNTk3IDguMDM1IDEwLjMzNSAxMC4wMzYgMTcu MjI0IDEuOTkyIDYuODkgMi45OTQgMTQuOTMxIDIuOTk0IDI0LjExM3Y1Ni4z MTJ6bS0zOC4zNDItMzQuNzQ2aC00LjE5M2MtMS40IDAtMi43OTkuMTA0LTQu MTkzLjMwMS00Ljk5My40MDItOS45MzggMS0xNC44MjggMS43OTUtNC44OTYu ODAxLTkuMjM4IDIuMTk5LTEzLjAzIDQuMTk1LTMuNzk1IDEuOTk4LTYuODkg NC41OTYtOS4yODYgNy43ODctMi4zOTYgMy4xOTctMy41OTUgNy4yOTMtMy41 OTUgMTIuMjgzIDAgNS41OTIgMS41OTcgMTAuMzMyIDQuNzkzIDE0LjIyNyAz LjE5MiAzLjg5NSA4LjU4NiA1Ljg0MiAxNi4xNzYgNS44NDIgMy43OTIgMCA3 LjM4Ny0uNDk2IDEwLjc4NC0xLjUgMy4zOTQtLjk5NCA2LjM4OC0yLjI5MyA4 Ljk4Ni0zLjg5MSAyLjU5MS0xLjU5OCA0LjY0NC0zLjM0NCA2LjE0LTUuMjQ0 IDEuNDk4LTEuODk1IDIuMjQ3LTMuNjQxIDIuMjQ3LTUuMjR2LTMwLjU1NXoi Lz48L2c+PC9zdmc+" alt="capterra-logo">
+                    </div>
+                    <span class="rating-score">4.6</span>
+                    <div class="stars">
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star filled">★</span>
+                        <span class="star half">★</span>
+                    </div>
+                    <span class="reviews-text">69 reviews</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1255,120 +1375,35 @@
         <div class="container">
             <div class="explanation-container reverse">
                 <div class="explanation-content">
-                    <h2>Beneficios de los Diagramas de Gantt</h2>
-                    <h3>Por qué las empresas líderes los utilizan</h3>
-                    <p>Los diagramas de Gantt transforman la gestión de proyectos para todo tipo de organizaciones.</p>
+                    <h2>¿Qué servicios especializados ofrecemos en Cartagantt?</h2>
+                    <p>Ofrecemos un <strong>ecosistema completo de servicios de gestión de proyectos</strong> diseñado específicamente para empresas que buscan <strong>transformación digital en project management</strong>. Nuestras soluciones incluyen <strong>desarrollo de software personalizado</strong>, <strong>implementación de diagramas de Gantt interactivos</strong>, <strong>consultoría estratégica empresarial</strong>, <strong>capacitación especializada en gestión del tiempo</strong> y <strong>auditorías de eficiencia operacional</strong>.</p>
+                    <div style="display: flex;flex-direction: row;">
+                        <div>
+                            <img src="images/flecha-glossy-3d.png" alt="flecha-glossy-3d">
+                        </div>
+
+                        <div style="display: flex;flex-direction: column;">
+                            <p>Trabajamos con <strong>sectores industriales diversos</strong> incluyendo construcción, tecnología, manufactura, sector financiero, retail, educación superior y organizaciones gubernamentales. Nuestro enfoque se basa en <strong>metodologías híbridas</strong> que combinan lo mejor de <strong>Project Management Institute (PMI)</strong>, <strong>Agile frameworks</strong>, <strong>Lean management</strong> y <strong>Design Thinking</strong>.</p>
+
+                            <p>Cada proyecto incluye <strong>análisis predictivo de riesgos</strong>, <strong>optimización automática de recursos</strong>, <strong>reportes ejecutivos en tiempo real</strong>, <strong>dashboards personalizados</strong> y <strong>métricas KPI avanzadas</strong> que permiten tomar decisiones basadas en datos concretos y proyecciones estadísticas precisas.</p>
+                        </div>
+    
+                    </div>
+
+                    
                     <ul>
-                        <li><strong>Mejor comunicación:</strong> Claridad en tareas y responsabilidades</li>
-                        <li><strong>Identifica problemas:</strong> Detecta retrasos y conflictos rápidamente</li>
-                        <li><strong>Optimiza recursos:</strong> Distribuye el trabajo eficientemente</li>
-                        <li><strong>Precisión en estimaciones:</strong> Mejora con datos históricos</li>
-                        <li><strong>Presentaciones claras:</strong> Informes profesionales para stakeholders</li>
+                        <li><strong>Comunicación empresarial revolucionaria:</strong> Implementamos sistemas de comunicación visual que proporcionan claridad absoluta en tareas, responsabilidades, dependencias críticas, deadlines y milestones para todos los stakeholders del proyecto, incluyendo equipos remotos, gerencias ejecutivas y clientes externos</li>
+                        
+                        <li><strong>Detección inteligente de problemas:</strong> Nuestro sistema de <strong>early warning con machine learning</strong> identifica automáticamente retrasos potenciales, conflictos de recursos, cuellos de botella operacionales, desviaciones presupuestarias y riesgos de calidad hasta 30 días antes de que se materialicen, permitiendo acciones correctivas proactivas</li>
+                        
+                        <li><strong>Optimización avanzada de recursos empresariales:</strong> Utilizamos <strong>algoritmos de optimización</strong> y <strong>análisis de capacidad</strong> para distribuir trabajo de manera científica, maximizando productividad individual y grupal, minimizando costos operativos directos e indirectos, eliminando desperdicios de tiempo y optimizando el ROI de cada proyecto hasta en un 60%</li>
+                        
+                        <li><strong>Integración tecnológica empresarial:</strong> Conectamos nuestras soluciones con <strong>más de 50 plataformas</strong> incluyendo Microsoft Project, Asana, Trello, Jira, SAP, Oracle, Salesforce, HubSpot, Slack, Teams y sistemas ERP personalizados, creando un ecosistema tecnológico unificado</li>
+                        
+                        <li><strong>Capacitación y certificación profesional:</strong> Ofrecemos programas de <strong>certificación internacional</strong> en project management, workshops especializados en diagramas de Gantt avanzados, seminarios de liderazgo de proyectos y cursos de transformación digital empresarial con metodologías reconocidas mundialmente</li>
+                        
+                        <li><strong>Soporte técnico 24/7 y consultoría continua:</strong> Proporcionamos <strong>soporte técnico ininterrumpido</strong>, actualizaciones automáticas del software, consultoría estratégica mensual, análisis de rendimiento trimestral y optimización continua de procesos para garantizar resultados sostenibles a largo plazo</li>
                     </ul>
-                </div>
-                <div class="explanation-image">
-                    <img src="/images/bullseye-3d-glossy-vidrio.png" alt="Bullseye 3D - Gestión de Proyectos" title="Bullseye 3D - Cartagantt" loading="lazy">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="demo-section" id="demo">
-        <div class="container">
-            <div class="demo-container">
-                <div class="demo-content">
-                    <h2>Todo lo que necesitas para<br><span class="gradient-text-primary">gestionar proyectos</span></h2>
-                    <p>Crea, colabora y comparte diagramas de Gantt impresionantes directamente en tu navegador.</p>
-                    <div class="cta-section">
-                        <a href="#waitlist" class="btn btn-primary" aria-label="Probar Cartagantt ahora">Probar Ahora</a>
-                    </div>
-                </div>
-                <div class="demo-visual">
-                    <div class="gantt-chart">
-                        <div class="gantt-header">
-                            <h4>Proyecto: Lanzamiento de Producto</h4>
-                            <span style="color: #10b981;">● En Progreso</span>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Planificación</div>
-                            <div class="task-bar planning"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Diseño</div>
-                            <div class="task-bar design"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Desarrollo</div>
-                            <div class="task-bar development"></div>
-                        </div>
-                        <div class="gantt-task">
-                            <div class="task-name">Testing</div>
-                            <div class="task-bar testing"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features" id="features">
-        <div class="container">
-            <div class="features-header">
-                <h2>TODO EN <span class="highlight">UNA SOLA PLATAFORMA</span></h2>
-                <p>Crea, gestiona y colabora en proyectos con nuestras herramientas integradas</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="list-outline"></ion-icon></div>
-                    <h3>Gestión de Tareas</h3>
-                    <p>Organiza tareas, define dependencias y establece hitos para mantener tu proyecto en el camino correcto.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="people-outline"></ion-icon></div>
-                    <h3>Colaboración en Tiempo Real</h3>
-                    <p>Trabaja con tu equipo simultáneamente, comenta tareas y recibe notificaciones automáticas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="analytics-outline"></ion-icon></div>
-                    <h3>Reportes Avanzados</h3>
-                    <p>Genera informes detallados de progreso, utilización de recursos y rendimiento del proyecto.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="color-palette-outline"></ion-icon></div>
-                    <h3>Plantillas Personalizables</h3>
-                    <p>Elige entre plantillas prediseñadas o crea las tuyas propias para diferentes proyectos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="link-outline"></ion-icon></div>
-                    <h3>Integraciones</h3>
-                    <p>Conecta con Slack, Trello, Asana, Microsoft Project y más de 50 herramientas.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><ion-icon name="phone-portrait-outline"></ion-icon></div>
-                    <h3>Acceso Móvil</h3>
-                    <p>Accede y actualiza tus proyectos desde cualquier dispositivo con nuestra app móvil.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="benefits">
-        <div class="container">
-            <div class="benefits-content">
-                <h2>Resultados que hablan por sí solos</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-number">40%</div>
-                        <div class="benefit-text">Reducción en tiempo de planificación</div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">85%</div>
-                        <div class="benefit-text">Mejora en cumplimiento de plazos</div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-number">4.9★</div>
-                        <div class="benefit-text">Calificación promedio de usuarios</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1400,7 +1435,7 @@
                 <div class="footer-section">
                     <h3>Producto</h3>
                     <ul>
-                        <li><a href="#" aria-label="Características del producto">Características</a></li>
+                        <li><a href="/#features" aria-label="Características del producto">Características</a></li>
                         <li><a href="#" aria-label="Plantillas de Cartagantt">Plantillas</a></li>
                         <li><a href="#" aria-label="Integraciones de Cartagantt">Integraciones</a></li>
                         <li><a href="#" aria-label="Precios de Cartagantt">Precios</a></li>
@@ -1444,8 +1479,8 @@
     </footer>
 
     <script>
-        // Lazy load scripts for performance
-        document.addEventListener('DOMContentLoaded', () => {
+            // Lazy load scripts for performance
+            document.addEventListener('DOMContentLoaded', () => {
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', e => {
@@ -1492,8 +1527,6 @@
                     }
                 });
             }, { threshold: 0.5 });
-
-            demoObserver.observe(document.querySelector('.demo-section'));
 
             // Mobile menu
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');

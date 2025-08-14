@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Aprende por qué el compliance debe estar en toda carta Gantt. Guía completa para project managers sobre planificación regulatoria y gestión de riesgos.">
+    <meta name="keywords" content="compliance carta gantt, planificación regulatoria, gestión de proyectos, project management, compliance gestión, cronograma compliance, riesgos regulatorios">
+    <meta name="author" content="Cartagantt Team">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="rating" content="General">
+    <meta property="og:title" content="Por Qué el Compliance Debe Estar en Toda Carta Gantt | Cartagantt Blog">
+    <meta property="og:description" content="El 73% de los proyectos en Latinoamérica experimentan retrasos por temas regulatorios. Aprende a integrar compliance en tu carta Gantt desde el primer día.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://cartagantt.org/blog/compliance-carta-gantt">
+    <meta property="og:image" content="https://cartagantt.org/images/compliance-gantt-og.jpg">
+    <meta property="og:site_name" content="Cartagantt Blog">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Por Qué el Compliance Debe Estar en Toda Carta Gantt">
+    <meta name="twitter:description" content="Guía completa para project managers sobre cómo integrar compliance en cronogramas Gantt y evitar retrasos regulatorios.">
+    <meta name="twitter:image" content="https://cartagantt.org/images/compliance-gantt-og.jpg">
+    <title>Por Qué el Compliance Debe Estar en Toda Carta Gantt | Cartagantt Blog</title>
+    <link rel="icon" href="/cartagantt-favicon.png" type="image/png">
+    <link rel="canonical" href="https://cartagantt.org/blog/compliance-carta-gantt">
+    <link rel="alternate" hreflang="es" href="https://cartagantt.org/blog/compliance-carta-gantt">
+    <link rel="alternate" hreflang="x-default" href="https://cartagantt.org/blog/compliance-carta-gantt">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Por Qué el Compliance Debe Estar en Toda Carta Gantt: La Fase Que Puede Salvar o Hundir Tu Proyecto",
+        "description": "Guía completa para project managers sobre cómo integrar compliance en cronogramas Gantt y evitar retrasos regulatorios que afectan el 73% de proyectos en Latinoamérica.",
+        "image": "https://cartagantt.org/images/compliance-gantt-og.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "Cartagantt Team"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Cartagantt",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://cartagantt.org/images/carta-gantt-logo.png"
+            }
+        },
+        "datePublished": "2025-01-12",
+        "dateModified": "2025-01-12",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://cartagantt.org/blog/compliance-carta-gantt"
+        },
+        "keywords": ["compliance", "carta gantt", "gestión de proyectos", "project management", "planificación regulatoria"],
+        "articleSection": "Gestión de Proyectos"
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/bebas-neue');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6574ff;
+            --secondary-color: #7f78fd;
+            --text-color: #333;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .breadcrumb {
+            background: var(--background-light);
+            padding: 1rem 0;
+        }
+
+        .breadcrumb-nav {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .breadcrumb-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .breadcrumb-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Blog Content */
+        .blog-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .blog-header {
+            text-align: left;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            flex-wrap: wrap;
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-meta ion-icon {
+            font-size: 1rem;
+        }
+
+        .blog-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .blog-subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--text-light);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: clamp(250px, 40vw, 400px);
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Table of Contents */
+        .table-of-contents {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .table-of-contents h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .table-of-contents ul {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+
+        .table-of-contents a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Blog Content Styles */
+        .blog-content {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.8;
+        }
+
+        .blog-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 600;
+            color: #1f2937;
+            margin: 3rem 0 1.5rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .blog-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.4rem, 3vw, 1.7rem);
+            font-weight: 500;
+            color: var(--primary-color);
+            margin: 2.5rem 0 1rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .blog-content h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            font-weight: 500;
+            color: #374151;
+            margin: 2rem 0 1rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .blog-content strong {
+            color: #1f2937;
+            font-weight: 600;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(101, 116, 255, 0.1), rgba(127, 120, 253, 0.1));
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+
+        /* Stats section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Task list styling */
+        .task-list {
+            background: var(--background-light);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .task-list h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .task-item {
+            background: var(--white);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .task-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .task-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .task-duration {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #fef3cd;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .warning-box h4 {
+            color: #92400e;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .warning-box ul {
+            margin-bottom: 0;
+        }
+
+        /* Success box */
+        .success-box {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .success-box h4 {
+            color: #065f46;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .cta-section p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Related articles */
+        .related-articles {
+            background: var(--background-light);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+        }
+
+        .related-articles h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #1f2937;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+        }
+
+        .article-title:hover {
+            color: var(--primary-color);
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background: #2f2d2f;
+            color: var(--white);
+            padding: 3rem 0 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1rem;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-wrapper {
+                padding: 1rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .table-of-contents {
+                padding: 1.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Scroll to top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(101, 116, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="/" class="logo">Cartagantt</a>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/#features">Características</a></li>
+                <li><a href="/#recursos">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/">Inicio</a> > <a href="/blog">Blog</a> > Compliance en Cartas Gantt
+            </nav>
+        </div>
+    </div>
+
+    <main class="blog-wrapper">
+        <article>
+            <header class="blog-header">
+                <div class="blog-meta">
+                    <span><ion-icon name="calendar-outline"></ion-icon> 12 de Enero, 2025</span>
+                    <span><ion-icon name="time-outline"></ion-icon> 15 min de lectura</span>
+                    <span><ion-icon name="person-outline"></ion-icon> Cartagantt Team</span>
+                    <span><ion-icon name="pricetag-outline"></ion-icon> Gestión de Proyectos</span>
+                </div>
+                <h1 class="blog-title">Por Qué el Compliance Debe Estar en Toda Carta Gantt</h1>
+                <p class="blog-subtitle">La fase crítica que puede salvar o hundir tu proyecto - Guía completa para project managers</p>
+            </header>
+
+            <img src="/images/compliance-gantt-hero.jpg" alt="Compliance en Carta Gantt - Gestión de Proyectos" class="featured-image" loading="lazy">
+
+            <div class="table-of-contents">
+                <h3><ion-icon name="list-outline"></ion-icon> Contenido del Artículo</h3>
+                <ul>
+                    <li><a href="#introduccion">El Problema Que Ningún PM Quiere Enfrentar</a></li>
+                    <li><a href="#que-es-compliance">¿Qué es el Compliance en Gestión de Proyectos?</a></li>
+                    <li><a href="#riesgos">Los Riesgos de No Planificar Compliance</a></li>
+                    <li><a href="#tipos-compliance">Tipos de Compliance Que Debes Planificar</a></li>
+                    <li><a href="#integracion">Cómo Integrar Compliance en tu Carta Gantt</a></li>
+                    <li><a href="#estimaciones">Estimaciones de Tiempo por Sector</a></li>
+                    <li><a href="#plantilla">Plantilla de Tareas de Compliance</a></li>
+                    <li><a href="#dependencias">Dependencias Críticas de Compliance</a></li>
+                    <li><a href="#senales">Señales de Alerta en tu Gantt</a></li>
+                    <li><a href="#caso-real">El Costo Real de Ignorar el Compliance</a></li>
+                </ul>
+            </div>
+
+            <div class="blog-content">
+                <section id="introduccion">
+                    <div class="highlight-box">
+                        <p><strong>Imagina este escenario:</strong> Estás gestionando un proyecto de implementación de software con un cronograma perfecto, cada tarea alineada, cada dependencia calculada. Pero a mitad del proyecto, una auditoría regulatoria paraliza todo por 8 semanas porque no planificaste las fases de compliance.</p>
+                    </div>
+
+                    <p>El <strong>73% de los proyectos en Latinoamérica experimentan retrasos por temas regulatorios no contemplados en sus cronogramas.</strong> Como project manager, no puedes permitirte ignorar el compliance. No es solo una obligación legal: es una <strong>fase crítica del proyecto</strong> que debe estar integrada desde el primer día en tu carta Gantt.</p>
+                </section>
+
+                <section id="que-es-compliance">
+                    <h2>¿Qué es el Compliance en Gestión de Proyectos?</h2>
+                    
+                    <p>El compliance en proyectos se refiere a todas las actividades, tareas y entregables necesarios para asegurar que tu proyecto cumple con regulaciones, normativas y estándares éticos desde su inicio hasta su cierre.</p>
+
+                    <p>En términos de planificación, significa que tu carta Gantt debe incluir:</p>
+                    <ul>
+                        <li><strong>Tareas específicas de cumplimiento regulatorio</strong></li>
+                        <li><strong>Hitos de aprobación de entes reguladores</strong></li>
+                        <li><strong>Buffers de tiempo para procesos burocráticos</strong></li>
+                        <li><strong>Dependencias críticas con entidades externas</strong></li>
+                        <li><strong>Actividades de documentación y auditoría</strong></li>
+                    </ul>
+                </section>
+
+                <section id="riesgos">
+                    <h2>Los Riesgos de No Planificar Compliance en tu Gantt</h2>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">45-90</span>
+                            <div class="stat-text">Días típicos para permisos ambientales</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15-30%</span>
+                            <div class="stat-text">Del presupuesto en multas por incumplimiento</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <div class="stat-text">Semanas promedio de retraso no planificado</div>
+                        </div>
+                    </div>
+
+                    <h3>Retrasos No Planificados</h3>
+                    <p>Un permiso ambiental puede tomar 45-90 días. Si no lo incluyes en tu cronograma inicial, tu proyecto se atrasa automáticamente esos meses, sin presupuesto para la extensión.</p>
+
+                    <h3>Sobrecostos por Multas</h3>
+                    <p>Las penalizaciones por incumplimiento pueden consumir entre el 15-30% del presupuesto total del proyecto. Dinero que podrías haber destinado a contingencias reales.</p>
+
+                    <h3>Efecto Dominó en Dependencias</h3>
+                    <p>Una tarea de compliance bloqueada paraliza todas las actividades que dependen de ella. En proyectos complejos, esto puede significar equipos parados esperando aprobaciones.</p>
+
+                    <h3>Riesgo de Cancelación del Proyecto</h3>
+                    <p>En casos extremos, el incumplimiento regulatorio puede llevar a la suspensión definitiva del proyecto, perdiendo toda la inversión realizada.</p>
+                </section>
+
+                <section id="tipos-compliance">
+                    <h2>Tipos de Compliance Que Debes Planificar</h2>
+
+                    <h3>1. Compliance Regulatorio por Sector</h3>
+
+                    <h4>Proyectos Financieros:</h4>
+                    <ul>
+                        <li>Aprobaciones de superintendencias bancarias (60-120 días)</li>
+                        <li>Validaciones de sistemas de prevención de lavado de dinero</li>
+                        <li>Certificaciones de seguridad de datos financieros</li>
+                    </ul>
+
+                    <h4>Proyectos de Construcción:</h4>
+                    <ul>
+                        <li>Licencias ambientales (90-180 días)</li>
+                        <li>Permisos municipales y estudios de impacto</li>
+                        <li>Certificaciones de seguridad ocupacional</li>
+                    </ul>
+
+                    <h4>Proyectos de Software/TI:</h
