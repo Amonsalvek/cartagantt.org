@@ -1243,58 +1243,58 @@
 
 
         .rating-container {
-                            background-color: #f8f9fa;
-                            border-radius: 12px;
-                            padding: 12px 16px;
-                            display: inline-flex;
-                            align-items: center;
-                            gap: 8px;
-                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-                            border: 1px solid #e9ecef;
-                        }
-                
-                        .rating-icon {
-                            width: 100px;
-                            height: auto;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: #f8f9fa;
-                            font-weight: bold;
-                            font-size: 14px;
-                        }
-                
-                        .rating-score {
-                            font-size: 18px;
-                            font-family: Oswald;
-                            font-weight: 600;
-                            color: #6c757d;
-                        }
-                
-                        .stars {
-                            display: flex;
-                            gap: 2px;
-                        }
-                
-                        .star {
-                            font-size: 16px;
-                            color: #e9ecef;
-                        }
-                
-                        .star.filled {
-                            color: #ced4da;
-                        }
-                
-                        .star.half {
-                            color: #ced4da;
-                            position: relative;
-                        }
-                
-                        .reviews-text {
-                            font-size: 14px;
-                            font-family: Quicksand;
-                            color: #868e96;
-                        }
+            background-color: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e9ecef;
+        }
+
+        .rating-icon {
+            width: 100px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f8f9fa;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .rating-score {
+            font-size: 18px;
+            font-family: Oswald;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            font-size: 16px;
+            color: #e9ecef;
+        }
+
+        .star.filled {
+            color: #ced4da;
+        }
+
+        .star.half {
+            color: #ced4da;
+            position: relative;
+        }
+
+        .reviews-text {
+            font-size: 14px;
+            font-family: Quicksand;
+            color: #868e96;
+        }
     </style>
 </head>
 <body>
@@ -1334,15 +1334,62 @@
 
     <section class="gantt-explanation">
         <div class="container">
+            <style>
+                @media (max-width: 900px) {
+                    .explanation-content.responsive-flex {
+                        flex-direction: column !important;
+                        gap: 32px;
+                    }
+                    .explanation-content.responsive-flex > div {
+                        width: 100% !important;
+                        max-width: 100% !important;
+                    }
+                    .explanation-content.responsive-flex img {
+                        max-width: 400px;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                }
+                @media (min-width: 901px) {
+                    .explanation-content.responsive-flex {
+                        flex-direction: row !important;
+                        gap: 48px;
+                    }
+                    .explanation-content.responsive-flex > div {
+                        width: 50%;
+                        max-width: 50%;
+                    }
+                    .explanation-content.responsive-flex img {
+                        max-width: 600px;
+                        width: 100%;
+                    }
+                }
+                .explanation-content.responsive-flex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 48px;
+                }
+                .explanation-content.responsive-flex .text-col {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                .explanation-content.responsive-flex .img-col {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
             <div class="explanation-container">
-                <div class="explanation-content" style="display: flex;flex-direction: row;">
-                    <div style="display: flex;flex-direction: column;gap: 20px;">
+                <div class="explanation-content responsive-flex">
+                    <div class="text-col">
                         <h2>¿Quiénes somos en Cartagantt?</h2>
                         <p>Somos una empresa con <strong>más de 8 años de experiencia</strong> especializada en <strong>gestión profesional de proyectos</strong>, <strong>diagramas de Gantt avanzados</strong> y <strong>consultoría empresarial en project management</strong>. Desde nuestra fundación en Bogotá, hemos expandido nuestros servicios por toda Colombia, atendiendo desde startups tecnológicas hasta grandes corporaciones multinacionales.</p>
                         
                         <p>Nuestro equipo multidisciplinario está conformado por <strong>ingenieros industriales certificados PMP</strong>, <strong>especialistas en metodologías ágiles Scrum y Kanban</strong>, <strong>desarrolladores de software empresarial</strong> y <strong>consultores en optimización de procesos</strong>. Esta combinación única de talentos nos permite ofrecer soluciones integrales que van más allá de la simple creación de cronogramas.</p>                        
                     </div>
-                    <div style="display: flex;justify-content: center;align-items: center;">
+                    <div class="img-col">
                         <img src="/images/toro-glossy-vidrio.png" alt="Sobre nosotros" title="Sobre nosotros" loading="lazy">
                     </div>
                 </div>
@@ -1372,36 +1419,104 @@
     </section>
 
     <section class="gantt-explanation">
+        <style>
+            /* Responsive styles for gantt-explanation section */
+            .gantt-explanation .explanation-container.reverse {
+                display: flex;
+                flex-direction: row;
+                gap: 32px;
+            }
+            .gantt-explanation .explanation-content {
+                flex: 1 1 0;
+                min-width: 0;
+            }
+            .gantt-explanation .services-flex-row {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 24px;
+                margin: 24px 0;
+            }
+            /* Aumentar el tamaño de la imagen */
+            .gantt-explanation .services-flex-row img {
+                max-width: 600px;
+                width: 100%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .gantt-explanation .services-flex-col {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                flex: 1 1 0;
+            }
+            .gantt-explanation ul {
+                padding-left: 1.2em;
+                margin-top: 24px;
+            }
+            .gantt-explanation ul li {
+                margin-bottom: 16px;
+                font-size: 1.05em;
+                line-height: 1.6;
+            }
+            @media (max-width: 900px) {
+                .gantt-explanation .explanation-container.reverse {
+                    flex-direction: column;
+                    gap: 24px;
+                }
+                .gantt-explanation .services-flex-row {
+                    flex-direction: column;
+                    align-items: stretch;
+                    gap: 16px;
+                }
+                .gantt-explanation .services-flex-row img {
+                    max-width: 500px;
+                    margin-bottom: 8px;
+                }
+            }
+            @media (max-width: 600px) {
+                .gantt-explanation .explanation-content h2 {
+                    font-size: 1.3em;
+                }
+                .gantt-explanation .explanation-content p,
+                .gantt-explanation ul li {
+                    font-size: 1em;
+                }
+                .gantt-explanation .services-flex-row img {
+                    max-width: 300px;
+                }
+                .gantt-explanation ul {
+                    padding-left: 1em;
+                }
+            }
+        </style>
         <div class="container">
             <div class="explanation-container reverse">
                 <div class="explanation-content">
                     <h2>¿Qué servicios especializados ofrecemos en Cartagantt?</h2>
-                    <p>Ofrecemos un <strong>ecosistema completo de servicios de gestión de proyectos</strong> diseñado específicamente para empresas que buscan <strong>transformación digital en project management</strong>. Nuestras soluciones incluyen <strong>desarrollo de software personalizado</strong>, <strong>implementación de diagramas de Gantt interactivos</strong>, <strong>consultoría estratégica empresarial</strong>, <strong>capacitación especializada en gestión del tiempo</strong> y <strong>auditorías de eficiencia operacional</strong>.</p>
-                    <div style="display: flex;flex-direction: row;">
+                    <p>
+                        Ofrecemos un <strong>ecosistema completo de servicios de gestión de proyectos</strong> diseñado específicamente para empresas que buscan <strong>transformación digital en project management</strong>. Nuestras soluciones incluyen <strong>desarrollo de software personalizado</strong>, <strong>implementación de diagramas de Gantt interactivos</strong>, <strong>consultoría estratégica empresarial</strong>, <strong>capacitación especializada en gestión del tiempo</strong> y <strong>auditorías de eficiencia operacional</strong>.
+                    </p>
+                    <div class="services-flex-row">
                         <div>
                             <img src="images/flecha-glossy-3d.png" alt="flecha-glossy-3d">
                         </div>
-
-                        <div style="display: flex;flex-direction: column;">
-                            <p>Trabajamos con <strong>sectores industriales diversos</strong> incluyendo construcción, tecnología, manufactura, sector financiero, retail, educación superior y organizaciones gubernamentales. Nuestro enfoque se basa en <strong>metodologías híbridas</strong> que combinan lo mejor de <strong>Project Management Institute (PMI)</strong>, <strong>Agile frameworks</strong>, <strong>Lean management</strong> y <strong>Design Thinking</strong>.</p>
-
-                            <p>Cada proyecto incluye <strong>análisis predictivo de riesgos</strong>, <strong>optimización automática de recursos</strong>, <strong>reportes ejecutivos en tiempo real</strong>, <strong>dashboards personalizados</strong> y <strong>métricas KPI avanzadas</strong> que permiten tomar decisiones basadas en datos concretos y proyecciones estadísticas precisas.</p>
+                        <div class="services-flex-col">
+                            <p>
+                                Trabajamos con <strong>sectores industriales diversos</strong> incluyendo construcción, tecnología, manufactura, sector financiero, retail, educación superior y organizaciones gubernamentales. Nuestro enfoque se basa en <strong>metodologías híbridas</strong> que combinan lo mejor de <strong>Project Management Institute (PMI)</strong>, <strong>Agile frameworks</strong>, <strong>Lean management</strong> y <strong>Design Thinking</strong>.
+                            </p>
+                            <p>
+                                Cada proyecto incluye <strong>análisis predictivo de riesgos</strong>, <strong>optimización automática de recursos</strong>, <strong>reportes ejecutivos en tiempo real</strong>, <strong>dashboards personalizados</strong> y <strong>métricas KPI avanzadas</strong> que permiten tomar decisiones basadas en datos concretos y proyecciones estadísticas precisas.
+                            </p>
                         </div>
-    
                     </div>
-
-                    
                     <ul>
                         <li><strong>Comunicación empresarial revolucionaria:</strong> Implementamos sistemas de comunicación visual que proporcionan claridad absoluta en tareas, responsabilidades, dependencias críticas, deadlines y milestones para todos los stakeholders del proyecto, incluyendo equipos remotos, gerencias ejecutivas y clientes externos</li>
-                        
                         <li><strong>Detección inteligente de problemas:</strong> Nuestro sistema de <strong>early warning con machine learning</strong> identifica automáticamente retrasos potenciales, conflictos de recursos, cuellos de botella operacionales, desviaciones presupuestarias y riesgos de calidad hasta 30 días antes de que se materialicen, permitiendo acciones correctivas proactivas</li>
-                        
                         <li><strong>Optimización avanzada de recursos empresariales:</strong> Utilizamos <strong>algoritmos de optimización</strong> y <strong>análisis de capacidad</strong> para distribuir trabajo de manera científica, maximizando productividad individual y grupal, minimizando costos operativos directos e indirectos, eliminando desperdicios de tiempo y optimizando el ROI de cada proyecto hasta en un 60%</li>
-                        
                         <li><strong>Integración tecnológica empresarial:</strong> Conectamos nuestras soluciones con <strong>más de 50 plataformas</strong> incluyendo Microsoft Project, Asana, Trello, Jira, SAP, Oracle, Salesforce, HubSpot, Slack, Teams y sistemas ERP personalizados, creando un ecosistema tecnológico unificado</li>
-                        
                         <li><strong>Capacitación y certificación profesional:</strong> Ofrecemos programas de <strong>certificación internacional</strong> en project management, workshops especializados en diagramas de Gantt avanzados, seminarios de liderazgo de proyectos y cursos de transformación digital empresarial con metodologías reconocidas mundialmente</li>
-                        
                         <li><strong>Soporte técnico 24/7 y consultoría continua:</strong> Proporcionamos <strong>soporte técnico ininterrumpido</strong>, actualizaciones automáticas del software, consultoría estratégica mensual, análisis de rendimiento trimestral y optimización continua de procesos para garantizar resultados sostenibles a largo plazo</li>
                     </ul>
                 </div>

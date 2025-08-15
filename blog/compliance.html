@@ -62,7 +62,7 @@
     </script>
     
     <style>
-        @import url('https://fonts.cdnfonts.com/css/bebas-neue');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
         * {
             margin: 0;
@@ -95,15 +95,12 @@
             width: 100%;
         }
 
-        /* Header */
+        /* Header - Removido position: sticky y fixed */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
@@ -117,7 +114,7 @@
         .logo {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(1.5rem, 4vw, 1.8rem);
-            font-weight: 600;
+            font-weight: 400;
             color: var(--primary-color);
             text-decoration: none;
         }
@@ -146,6 +143,9 @@
         }
 
         .breadcrumb-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             font-size: 0.9rem;
             color: var(--text-light);
         }
@@ -195,7 +195,7 @@
         .blog-title {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
+            font-weight: 400;
             line-height: 1.2;
             color: #1f2937;
             margin-bottom: 1rem;
@@ -211,7 +211,7 @@
         .featured-image {
             width: 100%;
             height: clamp(250px, 40vw, 400px);
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 12px;
             margin-bottom: 3rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -231,6 +231,7 @@
             font-size: 1.3rem;
             margin-bottom: 1rem;
             color: #1f2937;
+            font-weight: 400;
         }
 
         .table-of-contents ul {
@@ -261,28 +262,28 @@
         .blog-content h2 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(1.8rem, 4vw, 2.2rem);
-            font-weight: 600;
+            font-weight: 400;
             color: #1f2937;
             margin: 3rem 0 1.5rem 0;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 20px;
         }
 
         .blog-content h3 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(1.4rem, 3vw, 1.7rem);
-            font-weight: 500;
+            font-weight: 400;
             color: var(--primary-color);
             margin: 2.5rem 0 1rem 0;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 20px;
         }
 
         .blog-content h4 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-            font-weight: 500;
+            font-weight: 400;
             color: #374151;
             margin: 2rem 0 1rem 0;
-            scroll-margin-top: 100px;
+            scroll-margin-top: 20px;
         }
 
         .blog-content p {
@@ -339,7 +340,7 @@
         .stat-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2.5rem;
-            font-weight: 700;
+            font-weight: 400;
             color: var(--primary-color);
             display: block;
         }
@@ -442,6 +443,7 @@
             font-size: clamp(1.5rem, 3vw, 2rem);
             margin-bottom: 1rem;
             color: var(--white);
+            font-weight: 400;
         }
 
         .cta-section p {
@@ -481,6 +483,7 @@
             margin-bottom: 2rem;
             text-align: center;
             color: #1f2937;
+            font-weight: 400;
         }
 
         .articles-grid {
@@ -547,6 +550,7 @@
             font-family: 'Bebas Neue', sans-serif;
             margin-bottom: 1rem;
             color: var(--white);
+            font-weight: 400;
         }
 
         .footer-section ul {
@@ -675,7 +679,7 @@
         <article>
             <header class="blog-header">
                 <div class="blog-meta">
-                    <span><ion-icon name="calendar-outline"></ion-icon> 12 de Enero, 2025</span>
+                    <span><ion-icon name="calendar-outline"></ion-icon> 15 de Agosto, 2025</span>
                     <span><ion-icon name="time-outline"></ion-icon> 15 min de lectura</span>
                     <span><ion-icon name="person-outline"></ion-icon> Cartagantt Team</span>
                     <span><ion-icon name="pricetag-outline"></ion-icon> Gestión de Proyectos</span>
@@ -684,7 +688,7 @@
                 <p class="blog-subtitle">La fase crítica que puede salvar o hundir tu proyecto - Guía completa para project managers</p>
             </header>
 
-            <img src="/images/compliance-gantt-hero.jpg" alt="Compliance en Carta Gantt - Gestión de Proyectos" class="featured-image" loading="lazy">
+            <img src="/images/estatuilla-justicia-glossy.png" alt="Compliance en Carta Gantt - Gestión de Proyectos" class="featured-image" loading="lazy">
 
             <div class="table-of-contents">
                 <h3><ion-icon name="list-outline"></ion-icon> Contenido del Artículo</h3>
@@ -774,6 +778,489 @@
                         <li>Licencias ambientales (90-180 días)</li>
                         <li>Permisos municipales y estudios de impacto</li>
                         <li>Certificaciones de seguridad ocupacional</li>
+                        <li>Aprobaciones de planes de manejo de residuos</li>
                     </ul>
 
-                    <h4>Proyectos de Software/TI:</h
+                    <h4>Proyectos de Software/TI:</h4>
+                    <ul>
+                        <li>Certificaciones ISO 27001 y SOC 2 (45-90 días)</li>
+                        <li>Auditorías de seguridad de datos personales (GDPR, LOPD)</li>
+                        <li>Validaciones de accesibilidad web (WCAG)</li>
+                        <li>Certificaciones de comercio electrónico</li>
+                    </ul>
+
+                    <h4>Proyectos de Salud:</h4>
+                    <ul>
+                        <li>Aprobaciones de INVIMA o FDA (180-365 días)</li>
+                        <li>Validaciones de protocolos clínicos</li>
+                        <li>Certificaciones de buenas prácticas médicas</li>
+                    </ul>
+
+                    <h3>2. Compliance Interno y Corporativo</h3>
+                    <ul>
+                        <li><strong>Auditorías internas</strong>: Revisiones de procesos y controles</li>
+                        <li><strong>Políticas de ética empresarial</strong>: Códigos de conducta y conflictos de interés</li>
+                        <li><strong>Gestión de riesgos</strong>: Identificación y mitigación de riesgos operacionales</li>
+                        <li><strong>Cumplimiento laboral</strong>: Normativas de seguridad ocupacional</li>
+                    </ul>
+
+                    <h3>3. Compliance Internacional</h3>
+                    <p>Para proyectos multinacionales, debes considerar:</p>
+                    <ul>
+                        <li>Regulaciones de transferencia de datos entre países</li>
+                        <li>Normativas fiscales internacionales</li>
+                        <li>Acuerdos comerciales y aranceles</li>
+                        <li>Certificaciones de calidad por región</li>
+                    </ul>
+                </section>
+
+                <section id="integracion">
+                    <h2>Cómo Integrar Compliance en tu Carta Gantt</h2>
+
+                    <div class="warning-box">
+                        <h4><ion-icon name="warning-outline"></ion-icon> Error Común de PMs</h4>
+                        <p>Muchos project managers tratan el compliance como una tarea paralela o final. <strong>ERROR.</strong> El compliance debe estar integrado en cada fase del proyecto, no como un add-on al final.</p>
+                    </div>
+
+                    <h3>Fase 1: Identificación Temprana (Planning)</h3>
+                    <p>Durante la fase de planificación, debes:</p>
+                    <ul>
+                        <li><strong>Mapear todas las regulaciones aplicables</strong> según tu sector e industria</li>
+                        <li><strong>Identificar stakeholders regulatorios</strong> (entes de control, certificadores)</li>
+                        <li><strong>Estimar tiempos conservadores</strong> para cada proceso de aprobación</li>
+                        <li><strong>Definir entregables específicos</strong> para cada hito regulatorio</li>
+                    </ul>
+
+                    <h3>Fase 2: Integración en el Cronograma</h3>
+                    <p>En tu carta Gantt, cada tarea de compliance debe tener:</p>
+
+                    <div class="task-list">
+                        <h4>Estructura de Tareas de Compliance</h4>
+                        <div class="task-item">
+                            <div class="task-name">1. Investigación y Mapeo Regulatorio</div>
+                            <div class="task-duration">Duración: 5-10 días | Dependencias: Definición del alcance del proyecto</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">2. Preparación de Documentación</div>
+                            <div class="task-duration">Duración: 15-25 días | Dependencias: Especificaciones técnicas finalizadas</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">3. Solicitud de Permisos/Certificaciones</div>
+                            <div class="task-duration">Duración: 1-3 días | Dependencias: Documentación aprobada internamente</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">4. Periodo de Revisión Regulatoria</div>
+                            <div class="task-duration">Duración: 45-180 días | Dependencias: Solicitud enviada</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">5. Respuesta a Observaciones</div>
+                            <div class="task-duration">Duración: 10-20 días | Dependencias: Recepción de feedback regulatorio</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">6. Aprobación Final</div>
+                            <div class="task-duration">Duración: 15-30 días | Dependencias: Observaciones resueltas</div>
+                        </div>
+                    </div>
+
+                    <h3>Fase 3: Buffers y Contingencias</h3>
+                    <p>Siempre incluye buffers de tiempo para compliance:</p>
+                    <ul>
+                        <li><strong>Buffer del 25-40%</strong> sobre el tiempo estimado oficial</li>
+                        <li><strong>Contingencias para revisiones adicionales</strong></li>
+                        <li><strong>Tiempo para posibles apelaciones</strong></li>
+                    </ul>
+                </section>
+
+                <section id="estimaciones">
+                    <h2>Estimaciones de Tiempo por Sector</h2>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">30-60</span>
+                            <div class="stat-text">Días - Permisos Comerciales Básicos</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">90-180</span>
+                            <div class="stat-text">Días - Licencias Ambientales</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">120-365</span>
+                            <div class="stat-text">Días - Aprobaciones Farmacéuticas</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">45-90</span>
+                            <div class="stat-text">Días - Certificaciones ISO</div>
+                        </div>
+                    </div>
+
+                    <h3>Tabla de Referencia por Industria</h3>
+                    <div class="task-list">
+                        <div class="task-item">
+                            <div class="task-name">Fintech / Servicios Financieros</div>
+                            <div class="task-duration">Tiempo promedio: 90-150 días | Complejidad: Alta</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">E-commerce / Retail Digital</div>
+                            <div class="task-duration">Tiempo promedio: 30-60 días | Complejidad: Media</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">Salud y Dispositivos Médicos</div>
+                            <div class="task-duration">Tiempo promedio: 180-365 días | Complejidad: Muy Alta</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">Educación y EdTech</div>
+                            <div class="task-duration">Tiempo promedio: 45-90 días | Complejidad: Media</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">Construcción e Infraestructura</div>
+                            <div class="task-duration">Tiempo promedio: 120-240 días | Complejidad: Alta</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="plantilla">
+                    <h2>Plantilla de Tareas de Compliance para tu Gantt</h2>
+
+                    <div class="success-box">
+                        <h4><ion-icon name="checkmark-circle-outline"></ion-icon> Plantilla Lista para Usar</h4>
+                        <p>Copia esta estructura directamente en tu herramienta de Gantt favorita. Adapta los tiempos según tu sector específico.</p>
+                    </div>
+
+                    <h3>Estructura de Trabajo de Compliance (WBS)</h3>
+
+                    <div class="task-list">
+                        <h4>1. FASE PREPARATORIA (Semanas 1-3)</h4>
+                        <div class="task-item">
+                            <div class="task-name">1.1 Análisis de Requisitos Regulatorios</div>
+                            <div class="task-duration">5 días | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">1.2 Identificación de Stakeholders Regulatorios</div>
+                            <div class="task-duration">3 días | Responsable: PM + Legal</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">1.3 Cronograma de Hitos Regulatorios</div>
+                            <div class="task-duration">3 días | Responsable: PM</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">1.4 Asignación de Presupuesto para Compliance</div>
+                            <div class="task-duration">2 días | Responsable: Finance + PM</div>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <h4>2. FASE DE DOCUMENTACIÓN (Semanas 4-7)</h4>
+                        <div class="task-item">
+                            <div class="task-name">2.1 Preparación de Documentos Técnicos</div>
+                            <div class="task-duration">10 días | Responsable: Technical Lead</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">2.2 Revisión Legal de Documentación</div>
+                            <div class="task-duration">5 días | Responsable: Legal Team</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">2.3 Preparación de Formularios Regulatorios</div>
+                            <div class="task-duration">7 días | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">2.4 Validación Interna de Documentación</div>
+                            <div class="task-duration">3 días | Responsable: QA + PM</div>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <h4>3. FASE DE SOLICITUD (Semanas 8-9)</h4>
+                        <div class="task-item">
+                            <div class="task-name">3.1 Envío de Solicitudes a Entes Reguladores</div>
+                            <div class="task-duration">2 días | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">3.2 Confirmación de Recepción</div>
+                            <div class="task-duration">3 días | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">3.3 Setup de Tracking y Monitoreo</div>
+                            <div class="task-duration">1 día | Responsable: PM</div>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <h4>4. FASE DE ESPERA Y SEGUIMIENTO (Semanas 10-22)</h4>
+                        <div class="task-item">
+                            <div class="task-name">4.1 Periodo de Revisión Regulatoria</div>
+                            <div class="task-duration">60-90 días | Responsable: Entes Externos</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">4.2 Seguimiento Semanal de Status</div>
+                            <div class="task-duration">Recurrente | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">4.3 Gestión de Comunicaciones</div>
+                            <div class="task-duration">Según necesidad | Responsable: PM</div>
+                        </div>
+                    </div>
+
+                    <div class="task-list">
+                        <h4>5. FASE DE RESOLUCIÓN (Semanas 23-26)</h4>
+                        <div class="task-item">
+                            <div class="task-name">5.1 Análisis de Feedback Regulatorio</div>
+                            <div class="task-duration">3 días | Responsable: Legal + Technical</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">5.2 Implementación de Correcciones</div>
+                            <div class="task-duration">10-15 días | Responsable: Development Team</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">5.3 Re-envío de Documentación</div>
+                            <div class="task-duration">2 días | Responsable: Compliance Officer</div>
+                        </div>
+                        <div class="task-item">
+                            <div class="task-name">5.4 Aprobación Final</div>
+                            <div class="task-duration">15-30 días | Responsable: Entes Externos</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="dependencias">
+                    <h2>Dependencias Críticas de Compliance</h2>
+
+                    <p>Las tareas de compliance crean dependencias que pueden bloquear todo tu proyecto. Identifica estas relaciones críticas:</p>
+
+                    <h3>Dependencias Externas (Fuera de tu Control)</h3>
+                    <ul>
+                        <li><strong>Tiempos de respuesta gubernamentales</strong>: Pueden variar por carga de trabajo</li>
+                        <li><strong>Cambios regulatorios</strong>: Nuevas normativas pueden aparecer durante el proyecto</li>
+                        <li><strong>Disponibilidad de auditores</strong>: Certificadores externos con agenda limitada</li>
+                        <li><strong>Procesos burocráticos</strong>: Pasos adicionales no documentados</li>
+                    </ul>
+
+                    <h3>Dependencias Internas (Bajo tu Control)</h3>
+                    <ul>
+                        <li><strong>Completitud de documentación técnica</strong>: Base para cualquier solicitud</li>
+                        <li><strong>Disponibilidad del equipo legal</strong>: Revisión crítica de documentos</li>
+                        <li><strong>Aprobaciones de stakeholders internos</strong>: Sign-off ejecutivo</li>
+                        <li><strong>Presupuesto para fees regulatorios</strong>: Pagos requeridos para procesamiento</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <h4><ion-icon name="warning-outline"></ion-icon> Riesgo de Dependencia Circular</h4>
+                        <ul>
+                            <li>Evita que el compliance dependa de tareas que aún están en desarrollo</li>
+                            <li>Planifica entregas parciales para avanzar en paralelo</li>
+                            <li>Define mockups o prototipos para validaciones tempranas</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="senales">
+                    <h2>Señales de Alerta en tu Gantt</h2>
+
+                    <p>Estas señales indican que tu planificación de compliance tiene problemas:</p>
+
+                    <h3>🚨 Señales Rojas</h3>
+                    <ul>
+                        <li><strong>Compliance concentrado al final</strong>: Todas las tareas regulatorias en las últimas semanas</li>
+                        <li><strong>Sin buffers de tiempo</strong>: Estimaciones exactas sin contingencias</li>
+                        <li><strong>Dependencias no mapeadas</strong>: Tareas críticas sin predecesores definidos</li>
+                        <li><strong>Responsables indefinidos</strong>: Tareas asignadas a "por definir"</li>
+                        <li><strong>Sin presupuesto específico</strong>: Costs de compliance no contemplados</li>
+                    </ul>
+
+                    <h3>🟡 Señales Amarillas</h3>
+                    <ul>
+                        <li><strong>Buffers insuficientes</strong>: Menos del 20% de contingencia</li>
+                        <li><strong>Comunicación irregular</strong>: Sin touchpoints semanales con reguladores</li>
+                        <li><strong>Documentación incompleta</strong>: Entregables parciales para revisión</li>
+                        <li><strong>Equipo sin experiencia</strong>: Primera vez trabajando con estos reguladores</li>
+                    </ul>
+
+                    <h3>✅ Señales Verdes</h3>
+                    <ul>
+                        <li><strong>Compliance integrado desde el inicio</strong>: Tareas distribuidas a lo largo del proyecto</li>
+                        <li><strong>Buffers adecuados</strong>: 25-40% de tiempo adicional planificado</li>
+                        <li><strong>Comunicación proactiva</strong>: Contacto regular con stakeholders regulatorios</li>
+                        <li><strong>Equipo experimentado</strong>: Compliance officer con historial en el sector</li>
+                        <li><strong>Plan de contingencia</strong>: Alternativas definidas para cada escenario</li>
+                    </ul>
+                </section>
+
+                <section id="caso-real">
+                    <h2>El Costo Real de Ignorar el Compliance</h2>
+
+                    <div class="highlight-box">
+                        <p><strong>Caso Real:</strong> Una startup fintech latinoamericana desarrolló su plataforma de pagos en 8 meses. Al final, descubrieron que necesitaban una licencia bancaria que toma 18 meses obtener. <strong>Resultado:</strong> 2 años de retraso, $3M en sobrecostos y casi la quiebra de la empresa.</p>
+                    </div>
+
+                    <h3>El Análisis del Fracaso</h3>
+                    <p>¿Qué falló en su carta Gantt?</p>
+                    <ul>
+                        <li><strong>Sin investigación regulatoria inicial</strong>: No validaron requisitos legales</li>
+                        <li><strong>Compliance como "nice to have"</strong>: Lo consideraron opcional hasta el final</li>
+                        <li><strong>Sin expertise legal en el equipo</strong>: Desarrolladores tomando decisiones regulatorias</li>
+                        <li><strong>Supuestos incorrectos</strong>: Asumieron que "ya existían las licencias"</li>
+                    </ul>
+
+                    <h3>Cómo Se Habría Evitado</h3>
+                    <p>Con una planificación adecuada de compliance:</p>
+                    <ul>
+                        <li><strong>Investigación regulatoria en Semana 1</strong>: Identificar requisitos desde el inicio</li>
+                        <li><strong>Solicitud de licencia en paralelo</strong>: Comenzar trámites mientras se desarrolla</li>
+                        <li><strong>MVP regulatorio</strong>: Desarrollar versión mínima para obtener permisos</li>
+                        <li><strong>Plan B definido</strong>: Alternativas como partnerships con bancos existentes</li>
+                    </ul>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">$3M</span>
+                            <div class="stat-text">Sobrecosto por ignorar compliance</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24</span>
+                            <div class="stat-text">Meses de retraso total</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">60%</span>
+                            <div class="stat-text">De la inversión inicial perdida</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <div class="stat-text">Empleados despedidos por crisis</div>
+                        </div>
+                    </div>
+
+                    <h3>Lecciones Clave para Project Managers</h3>
+                    <ol>
+                        <li><strong>El compliance no es opcional</strong>: Es tan crítico como la funcionalidad técnica</li>
+                        <li><strong>Empezar temprano siempre es mejor</strong>: Los procesos regulatorios no se pueden acelerar</li>
+                        <li><strong>Invertir en expertise</strong>: Un compliance officer experimentado vale su peso en oro</li>
+                        <li><strong>Planificar para el peor escenario</strong>: Murphy's Law aplica especialmente a regulaciones</li>
+                        <li><strong>Comunicación constante</strong>: Mantener relación activa con todos los stakeholders regulatorios</li>
+                    </ol>
+                </section>
+
+                <div class="cta-section">
+                    <h3>¿Listo Para Integrar Compliance en tu Próximo Proyecto?</h3>
+                    <p>No dejes que tu próximo proyecto sea parte de esa estadística del 73% que experimenta retrasos regulatorios. Planifica el compliance desde el día uno.</p>
+                    <a href="/#waitlist" class="btn">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        Empezar ahora
+                    </a>
+                </div>
+
+                <div class="related-articles">
+                    <h3>Artículos Relacionados</h3>
+                    <div class="articles-grid">
+                        <article class="article-card">
+                            <img src="/images/risk-management-gantt.jpg" alt="Gestión de Riesgos en Carta Gantt" class="article-image" loading="lazy">
+                            <div class="article-content">
+                                <h4><a href="/blog/gestion-riesgos-carta-gantt" class="article-title">Cómo Gestionar Riesgos en tu Carta Gantt</a></h4>
+                                <p class="article-excerpt">Identifica, evalúa y mitiga riesgos directamente en tu cronograma. Metodología práctica con ejemplos reales.</p>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <img src="/images/dependencies-gantt.jpg" alt="Dependencias Críticas Gantt" class="article-image" loading="lazy">
+                            <div class="article-content">
+                                <h4><a href="/blog/dependencias-criticas-gantt" class="article-title">Las 7 Dependencias Críticas Que Rompen Proyectos</a></h4>
+                                <p class="article-excerpt">Evita los bloqueos más comunes en gestión de proyectos. Casos reales y cómo prevenirlos en tu Gantt.</p>
+                            </div>
+                        </article>
+                        <article class="article-card">
+                            <img src="/images/stakeholder-management.jpg" alt="Gestión de Stakeholders" class="article-image" loading="lazy">
+                            <div class="article-content">
+                                <h4><a href="/blog/stakeholders-externos-gantt" class="article-title">Gestionar Stakeholders Externos en tu Cronograma</a></h4>
+                                <p class="article-excerpt">Proveedores, clientes y reguladores: cómo incluir actores externos en tu planificación Gantt.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cartagantt</h4>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/#features">Características</a></li>
+                        <li><a href="/#pricing">Precios</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="/#waitlist">Plantillas</a></li>
+                        <li><a href="/#waitlist">Guías</a></li>
+                        <li><a href="/#waitlist">Tutoriales</a></li>
+                        <li><a href="/#waitlist">Webinars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="/#waitlist">Centro de Ayuda</a></li>
+                        <li><a href="/#waitlist">Contacto</a></li>
+                        <li><a href="/#waitlist">Comunidad</a></li>
+                        <li><a href="/#waitlist">Estado del Servicio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/#waitlist">Privacidad</a></li>
+                        <li><a href="/#waitlist">Términos</a></li>
+                        <li><a href="/#waitlist">Cookies</a></li>
+                        <li><a href="/#waitlist">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Cartagantt. Todos los derechos reservados. | Hecho con ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="scroll-to-top" id="scrollToTop">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </a>
+
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for table of contents links
+        document.querySelectorAll('.table-of-contents a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
