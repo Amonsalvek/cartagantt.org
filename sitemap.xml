@@ -4,7 +4,6 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
@@ -14,17 +13,27 @@
 </url>
 <url>
   <loc>https://cartagantt.org/sobre-nosotros.html</loc>
-  <lastmod>2025-08-14T02:34:24+00:00</lastmod>
+  <lastmod>2025-08-15T20:27:03+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cartagantt.org/blog.html</loc>
-  <lastmod>2025-08-14T02:34:24+00:00</lastmod>
+  <lastmod>2025-08-17T01:49:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cartagantt.org/blog/compliance.html</loc>
-  <lastmod>2025-08-14T02:34:24+00:00</lastmod>
+  <lastmod>2025-08-17T01:49:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cartagantt.org/blog/carta-gantt-para-proyecto-legal.html</loc>
+  <lastmod>2025-08-17T01:49:15+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cartagantt.org/blog/carta-gantt-ventajas-y-desventajas.html</loc>
+  <lastmod>2025-08-17T01:49:15+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
