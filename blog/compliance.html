@@ -12,18 +12,18 @@
     <meta property="og:title" content="Por Qué el Compliance Debe Estar en Toda Carta Gantt | Cartagantt Blog">
     <meta property="og:description" content="El 73% de los proyectos en Latinoamérica experimentan retrasos por temas regulatorios. Aprende a integrar compliance en tu carta Gantt desde el primer día.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://cartagantt.org/blog/compliance-carta-gantt">
-    <meta property="og:image" content="https://cartagantt.org/images/compliance-gantt-og.jpg">
+    <meta property="og:url" content="https://cartagantt.org/blog/compliance.html">
+    <meta property="og:image" content="https://cartagantt.org/images/estatuilla-justicia-glossy.png">
     <meta property="og:site_name" content="Cartagantt Blog">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Por Qué el Compliance Debe Estar en Toda Carta Gantt">
     <meta name="twitter:description" content="Guía completa para project managers sobre cómo integrar compliance en cronogramas Gantt y evitar retrasos regulatorios.">
-    <meta name="twitter:image" content="https://cartagantt.org/images/compliance-gantt-og.jpg">
+    <meta name="twitter:image" content="https://cartagantt.org/images/estatuilla-justicia-glossy.png">
     <title>Por Qué el Compliance Debe Estar en Toda Carta Gantt | Cartagantt Blog</title>
     <link rel="icon" href="/cartagantt-favicon.png" type="image/png">
-    <link rel="canonical" href="https://cartagantt.org/blog/compliance-carta-gantt">
-    <link rel="alternate" hreflang="es" href="https://cartagantt.org/blog/compliance-carta-gantt">
-    <link rel="alternate" hreflang="x-default" href="https://cartagantt.org/blog/compliance-carta-gantt">
+    <link rel="canonical" href="https://cartagantt.org/blog/compliance.html">
+    <link rel="alternate" hreflang="es" href="https://cartagantt.org/blog/compliance.html">
+    <link rel="alternate" hreflang="x-default" href="https://cartagantt.org/blog/compliance.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         "@type": "BlogPosting",
         "headline": "Por Qué el Compliance Debe Estar en Toda Carta Gantt: La Fase Que Puede Salvar o Hundir Tu Proyecto",
         "description": "Guía completa para project managers sobre cómo integrar compliance en cronogramas Gantt y evitar retrasos regulatorios que afectan el 73% de proyectos en Latinoamérica.",
-        "image": "https://cartagantt.org/images/compliance-gantt-og.jpg",
+        "image": "https://cartagantt.org/images/estatuilla-justicia-glossy.png",
         "author": {
             "@type": "Organization",
             "name": "Cartagantt Team"
@@ -54,7 +54,7 @@
         "dateModified": "2025-01-12",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://cartagantt.org/blog/compliance-carta-gantt"
+            "@id": "https://cartagantt.org/blog/compliance.html"
         },
         "keywords": ["compliance", "carta gantt", "gestión de proyectos", "project management", "planificación regulatoria"],
         "articleSection": "Gestión de Proyectos"
@@ -535,46 +535,72 @@
         footer {
             background: #2f2d2f;
             color: var(--white);
-            padding: 3rem 0 2rem 0;
-            margin-top: 4rem;
+            padding: clamp(1.5rem, 5vw, 2rem) 0;
+            text-align: center;
+            border-top-left-radius: 60px;
+            border-top-right-radius: 60px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 25vw, 250px), 1fr));
+            gap: clamp(1rem, 3vw, 2rem);
             margin-bottom: 2rem;
         }
 
-        .footer-section h4 {
+        .footer-section h3 {
             font-family: 'Bebas Neue', sans-serif;
             margin-bottom: 1rem;
-            color: var(--white);
-            font-weight: 400;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            font-weight: 500;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .footer-section ul {
             list-style: none;
-            padding: 0;
         }
 
         .footer-section a {
             color: #d1d5db;
             text-decoration: none;
             transition: color 0.3s;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         }
 
         .footer-section a:hover {
-            color: var(--primary-color);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 2s ease-in-out infinite;
         }
 
         .footer-bottom {
             border-top: 1px solid #374151;
             padding-top: 1rem;
-            text-align: center;
             color: #9ca3af;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+
+        .footer-logo img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            loading: lazy;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
         }
 
         /* Responsive Design */
@@ -660,7 +686,7 @@
             <a href="/" class="logo">Cartagantt</a>
             <ul class="nav-links">
                 <li><a href="/">Inicio</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/#features">Características</a></li>
                 <li><a href="/#recursos">Recursos</a></li>
             </ul>
@@ -670,7 +696,7 @@
     <div class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
-                <a href="/">Inicio</a> > <a href="/blog">Blog</a> > Compliance en Cartas Gantt
+                <a href="/">Inicio</a> > <a href="/blog.html">Blog</a> > Compliance en Cartas Gantt
             </nav>
         </div>
     </div>
@@ -1167,44 +1193,47 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Cartagantt</h4>
+                    <h3>Producto</h3>
                     <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/#features">Características</a></li>
-                        <li><a href="/#pricing">Precios</a></li>
-                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="#" aria-label="Características del producto">Características</a></li>
+                        <li><a href="#" aria-label="Plantillas de Cartagantt">Plantillas</a></li>
+                        <li><a href="#" aria-label="Integraciones de Cartagantt">Integraciones</a></li>
+                        <li><a href="#" aria-label="Precios de Cartagantt">Precios</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Recursos</h4>
+                    <h3>Recursos</h3>
                     <ul>
-                        <li><a href="/#waitlist">Plantillas</a></li>
-                        <li><a href="/#waitlist">Guías</a></li>
-                        <li><a href="/#waitlist">Tutoriales</a></li>
-                        <li><a href="/#waitlist">Webinars</a></li>
+                        <li><a href="#" aria-label="Blog de Cartagantt">Blog</a></li>
+                        <li><a href="#" aria-label="Tutoriales de Cartagantt">Tutoriales</a></li>
+                        <li><a href="#" aria-label="Webinars de Cartagantt">Webinars</a></li>
+                        <li><a href="#" aria-label="Centro de ayuda de Cartagantt">Centro de Ayuda</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Soporte</h4>
+                    <h3>Empresa</h3>
                     <ul>
-                        <li><a href="/#waitlist">Centro de Ayuda</a></li>
-                        <li><a href="/#waitlist">Contacto</a></li>
-                        <li><a href="/#waitlist">Comunidad</a></li>
-                        <li><a href="/#waitlist">Estado del Servicio</a></li>
+                        <li><a href="#" aria-label="Acerca de Cartagantt">Acerca de</a></li>
+                        <li><a href="#" aria-label="Carreras en Cartagantt">Carreras</a></li>
+                        <li><a href="#" aria-label="Contacto con Cartagantt">Contacto</a></li>
+                        <li><a href="#" aria-label="Prensa de Cartagantt">Prensa</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Legal</h4>
+                    <h3>Legal</h3>
                     <ul>
-                        <li><a href="/#waitlist">Privacidad</a></li>
-                        <li><a href="/#waitlist">Términos</a></li>
-                        <li><a href="/#waitlist">Cookies</a></li>
-                        <li><a href="/#waitlist">GDPR</a></li>
+                        <li><a href="#" aria-label="Términos de servicio de Cartagantt">Términos de Servicio</a></li>
+                        <li><a href="#" aria-label="Política de privacidad de Cartagantt">Política de Privacidad</a></li>
+                        <li><a href="#" aria-label="Política de cookies de Cartagantt">Cookies</a></li>
+                        <li><a href="#" aria-label="Seguridad de Cartagantt">Seguridad</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Cartagantt. Todos los derechos reservados. | Hecho con ❤️</p>
+                <p>&copy; 2025 Cartagantt.org. Todos los derechos reservados.</p>
+            </div>
+            <div class="footer-logo">
+                <img src="/images/carta-gantt-logo.png" alt="Cartagantt Logo" title="Cartagantt - Creador de Diagramas de Gantt" loading="lazy">
             </div>
         </div>
     </footer>
